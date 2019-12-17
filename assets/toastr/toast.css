@@ -1,0 +1,7 @@
+.toast-title{font-weight:700}
+.toast-message{-ms-word-wrap:break-word;word-wrap:break-word}
+.toast-message a,.toast-message label{color:#FFF}
+.toast-message a:hover{color:#CCC;text-decoration:none}
+.toast-close-button{position:relative;right:-.3em;top:-.3em;float:right;font-size:20px;font-weight:700;color:#FFF;-webkit-text-shadow:0 1px 0 #fff;text-shadow:0 1px 0 #fff;opacity:.8;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80);filter:alpha(opacity=80);line-height:1}
+.toast-close-button:focus,.toast-close-button:hover{color:#000;text-decoration:none;cursor:pointer;opacity:.4;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);filter:alpha(opacity=40)
+}

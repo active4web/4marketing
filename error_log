@@ -1,0 +1,254 @@
+[04-Mar-2019 12:30:14 Asia/Riyadh] PHP Fatal error:  require_once(): Failed opening required '/home/taskswisyst/public_html/PM_v1/application/third_party/pusher/pusher.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/taskswisyst/public_html/PM_v1/application/libraries/Ci_pusher.php on line 20
+[04-Mar-2019 12:30:54 Asia/Riyadh] PHP Fatal error:  require_once(): Failed opening required '/home/taskswisyst/public_html/PM_v1/application/third_party/pusher/pusher.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/taskswisyst/public_html/PM_v1/application/libraries/Ci_pusher.php on line 20
+[04-Mar-2019 12:30:57 Asia/Riyadh] PHP Fatal error:  require_once(): Failed opening required '/home/taskswisyst/public_html/PM_v1/application/third_party/pusher/pusher.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/taskswisyst/public_html/PM_v1/application/libraries/Ci_pusher.php on line 20
+[04-Mar-2019 14:05:03 Asia/Riyadh] PHP Fatal error:  Call to undefined function intdiv() in /home/taskswisyst/public_html/PM_v1/application/modules/admin/views/task/tasks.php on line 429
+[05-Mar-2019 12:36:27 Asia/Riyadh] PHP Fatal error:  Call to undefined function intdiv() in /home/taskswisyst/public_html/PM_v1/application/modules/admin/views/task/tasks.php on line 429
+[21-Apr-2019 16:20:32 Africa/Cairo] PHP Fatal error:  Cannot redeclare Api::get_bank_accounts() in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 2010
+[22-Apr-2019 09:55:23 Africa/Cairo] PHP Fatal error:  Cannot use empty array elements in arrays in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 2335
+[22-Apr-2019 09:55:55 Africa/Cairo] PHP Fatal error:  Cannot use empty array elements in arrays in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 2335
+[30-Apr-2019 14:00:06 Africa/Cairo] PHP Fatal error:  Cannot use temporary expression in write context in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 6448
+[02-May-2019 17:01:33 Africa/Cairo] PHP Fatal error:  Cannot redeclare gen_random_string() (previously declared in /home/maahedwi/public_html/application/helpers/test_helper.php:13) in /home/maahedwi/public_html/application/helpers/main_helper.php on line 36
+[02-May-2019 17:02:48 Africa/Cairo] PHP Fatal error:  Cannot redeclare get_table_filed() (previously declared in /home/maahedwi/public_html/application/helpers/test_helper.php:3) in /home/maahedwi/public_html/application/helpers/main_helper.php on line 37
+[08-May-2019 10:06:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Banks::active() in /home/maahedwi/public_html/application/modules/admin/controllers/Banks.php on line 143
+[09-May-2019 14:41:29 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 14:41:29 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 14:52:52 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 14:52:52 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 14:54:20 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 14:54:20 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 14:55:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 14:55:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 14:55:53 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 14:55:54 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 14:58:17 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:00:27 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:00:28 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:01:23 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:01:23 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:01:29 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:01:29 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:01:43 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:01:43 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:01:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:01:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:01:55 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:01:55 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:03:00 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:03:00 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:03:04 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:03:04 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:04:40 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:04:40 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:04:46 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:04:46 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:04:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:04:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:06:27 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:06:27 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:06:34 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:06:34 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:13:40 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:13:41 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:15:23 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:15:27 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:40:17 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:40:17 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:41:16 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:41:16 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:42:13 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:42:13 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:42:46 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:42:46 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:49:44 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:49:44 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:53:36 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:53:36 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:54:11 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:54:11 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:54:56 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:54:56 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:55:17 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[09-May-2019 15:55:18 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:13:28 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:13:28 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:30:34 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:30:34 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:30:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:30:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:30:53 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:30:53 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:30:58 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:30:58 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:31:09 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:31:10 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:56:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 10:56:49 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 11:27:28 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 11:27:28 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 11:30:21 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 11:30:22 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 12:28:04 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 12:28:04 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:00:52 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:00:52 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:01:31 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:01:32 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:03:21 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:03:21 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:32:06 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:32:06 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:35:33 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:35:33 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:37:30 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:37:31 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:39:17 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:39:18 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:39:22 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:39:23 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:39:29 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:39:29 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:41:34 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:41:34 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:41:53 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:41:54 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:42:03 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:42:04 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:42:43 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:42:43 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:43:10 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:43:12 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:43:36 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:43:36 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:44:05 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:44:05 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:46:05 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:46:06 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:46:35 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:46:35 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:48:25 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:48:26 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:49:30 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:49:30 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:50:54 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:50:54 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:50:56 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:50:56 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:51:06 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:51:06 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:53:09 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:53:09 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:55:56 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:55:56 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:58:38 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 13:58:39 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:07:17 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:07:17 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:09:00 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:09:00 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:10:55 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:10:56 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:11:56 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:12:02 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:17:12 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:17:13 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:28:45 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:28:45 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:29:37 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:29:39 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:32:33 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:32:33 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:40:13 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:40:13 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:41:09 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:41:11 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:43:00 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:43:00 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:43:10 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:43:10 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:43:24 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 14:43:25 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:08:32 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:08:32 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:18:44 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:18:44 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:25:08 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:25:12 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:26:07 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:26:09 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:26:55 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:26:55 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:27:58 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:27:58 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:30:37 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 15:30:37 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:13:42 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:13:42 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:16:01 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:16:01 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:16:03 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:16:03 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:23:21 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:23:21 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:41:03 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:41:03 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:41:10 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:41:10 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:58:26 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 22:58:26 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:00:21 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:00:21 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:01:23 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:01:23 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:03:02 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:03:02 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:03:58 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:03:58 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:05:23 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:05:23 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:06:42 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:06:42 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:13:52 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:13:53 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:14:54 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:14:54 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[12-May-2019 23:15:19 Africa/Cairo] PHP Fatal error:  Cannot redeclare Notfiy::user_account() in /home/maahedwi/public_html/application/modules/admin/controllers/Notfiy.php on line 23
+[19-May-2019 15:25:13 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:16 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:16 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:20 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:22 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:22 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:22 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:29 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:29 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:29 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:54 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:54 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:25:54 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:26:10 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:26:10 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:26:10 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:27:16 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:27:16 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:27:16 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:27:25 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:27:25 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:27:25 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:27:32 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:27:32 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[19-May-2019 15:27:32 Africa/Cairo] PHP Fatal error:  Cannot use [] for reading in /home/maahedwi/public_html/application/modules/api/controllers/Api.php on line 4840
+[20-May-2019 14:01:13 Africa/Cairo] PHP Fatal error:  Cannot redeclare Courses::add_content_action() in /home/maahedwi/public_html/application/modules/admin/controllers/Courses.php on line 167
+[23-Jun-2019 15:55:53 Africa/Cairo] PHP Fatal error:  Cannot redeclare Courses::request_bag() in /home/maahedwi/public_html/application/modules/user/controllers/Courses.php on line 634
+[23-Jun-2019 15:55:57 Africa/Cairo] PHP Fatal error:  Cannot redeclare Courses::request_bag() in /home/maahedwi/public_html/application/modules/user/controllers/Courses.php on line 634
+[25-Jun-2019 17:17:35 Africa/Cairo] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/maahedwi/public_html/application/modules/search/controllers/Search.php on line 21
+[11-Oct-2019 04:14:52 Africa/Cairo] PHP Fatal error:  Cannot redeclare Api::get_all_messages() in /home/markting/public_html/web_app/application/modules/api/controllers/Api.php on line 996
+[11-Oct-2019 04:23:33 Africa/Cairo] PHP Fatal error:  Cannot redeclare Api::get_all_messages() in /home/markting/public_html/web_app/application/modules/api/controllers/Api.php on line 996
+[11-Oct-2019 04:25:52 Africa/Cairo] PHP Fatal error:  Cannot redeclare Api::get_all_messages() in /home/markting/public_html/web_app/application/modules/api/controllers/Api.php on line 960
+[11-Oct-2019 04:26:42 Africa/Cairo] PHP Fatal error:  Cannot redeclare Api::get_all_messages() in /home/markting/public_html/web_app/application/modules/api/controllers/Api.php on line 958
+[11-Oct-2019 04:26:51 Africa/Cairo] PHP Fatal error:  Cannot redeclare Api::get_all_messages() in /home/markting/public_html/web_app/application/modules/api/controllers/Api.php on line 958
+[11-Oct-2019 04:27:03 Africa/Cairo] PHP Fatal error:  Cannot redeclare Api::get_all_messages() in /home/markting/public_html/web_app/application/modules/api/controllers/Api.php on line 958
+[11-Oct-2019 04:27:26 Africa/Cairo] PHP Fatal error:  Cannot redeclare Api::get_all_messages() in /home/markting/public_html/web_app/application/modules/api/controllers/Api.php on line 958
+[11-Oct-2019 04:42:47 Africa/Cairo] PHP Fatal error:  Cannot redeclare Api::get_all_messages() in /home/markting/public_html/web_app/application/modules/api/controllers/Api.php on line 958
+[17-Nov-2019 11:51:59 Africa/Cairo] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/markting/public_html/web_app/application/modules/api/controllers/Api.php on line 3760
+[02-Dec-2019 12:57:05 Africa/Cairo] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/markting/public_html/web_app/application/modules/api/controllers/Api.php on line 5655
+[08-Dec-2019 18:02:13 Africa/Cairo] PHP Fatal error:  Cannot redeclare Courses::delete_images() in /home/markting/public_html/web_app/application/modules/admin/controllers/Courses.php on line 549

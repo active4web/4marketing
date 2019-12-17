@@ -9,7 +9,7 @@ foreach($home_page as $home_page)
   <!-- Banner block-->
   <div class="categories">
     <div class="container">
-      <div class="row">
+      <div class="row" style="margin:0px;">
          <div class="jtv-banner-block">
           <?php 
           foreach($cat as $cat){

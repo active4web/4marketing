@@ -5,14 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
-|
 | URL to your CodeIgniter root. Typically this will be your base URL,
 | WITH a trailing slash:
-|
 |	http://example.com/
-|
 | WARNING: You MUST set this value!
-|
 | If it is not set, then CodeIgniter will try guess the protocol and path
 | your installation, but due to security concerns the hostname will be set
 | to $_SERVER['SERVER_ADDR'] if available, or localhost otherwise.
@@ -24,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$basse = 'http://localhost/mywork/4markting/';
+$basse = 'http://localhost/mywork/4markting/4marketing/';
 define( 'FOLDER' , '/');
 define( 'MAIN' , 'home' );
 define( 'DIR' , $basse );

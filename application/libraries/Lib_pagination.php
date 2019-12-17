@@ -13,7 +13,7 @@
  * @licensed        Licensed MIT
  */
 
-class lib_pagination{
+class Lib_Pagination{
 
    private $CI;
 

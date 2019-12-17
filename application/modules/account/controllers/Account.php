@@ -15,7 +15,30 @@ class Account extends MX_Controller {
 		$this->load->library('session');
 		$this->load->library('pagination');
 		$this->load->model('data','','true');
+		$this->load->library('lib_pagination');
+
     }
+
+
+
+	public function index(){
+		$customer_id=$this->session->userdata('admin_id');
+
+$data['site_info'] =$this->db->get_where('site_info')->result(); 
+$data['cat'] =$this->db->get_where('category',array('view'=>'1'))->result(); 
+$data['search_cat'] =$this->db->get_where('category',array('view'=>'1'))->result(); 
+$data['pages'] =$this->db->get_where('pages',array('active'=>'1'))->result(); 
+$data['city'] =$this->db->get_where('city',array('view'=>'1'))->result(); 
+$data_conent['site_info'] =$this->db->get_where('site_info')->result(); 
+$data_conent['active'] =$this->db->order_by("id","desc")->get_where('products',array("user_id"=>$customer_id,'delete_key'=>'1','expired_date'=>'1','view'=>'1'))->result(); 
+$data_conent['wait'] =$this->db->order_by("id","desc")->get_where('products',array("user_id"=>$customer_id,'view'=>'0'))->result(); 
+$data_conent['exited'] =$this->db->order_by("id","desc")->get_where('products',array("user_id"=>$customer_id,'expired_date'=>'0'))->result(); 
+$data_conent['rejected'] =$this->db->order_by("id","desc")->get_where('products',array("user_id"=>$customer_id,'view'=>'2'))->result(); 
+$this->load->view("index/include/head",$data );
+$this->load->view("index/include/header",$data );
+$this->load->view("current", $data_conent); 
+$this->load->view("index/include/footer",$data);
+    }   
 
 
 	public function logout(){

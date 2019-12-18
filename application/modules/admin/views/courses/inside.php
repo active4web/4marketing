@@ -163,6 +163,9 @@ ul.ss {
 													case 1:
 													  $view="<span class='label label-sm label-success'>مفعل</span>";
 													  break;
+													  case 2:
+														$view="<span class='label label-sm label-success'>مرفوض</span>";
+														break;
 													default:
 													  break; 
 												}

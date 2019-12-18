@@ -21,9 +21,8 @@
             <ul>
               <li class="current"><a href="my_ads.html"><i class="fa fa-bullhorn" aria-hidden="true"></i> إعلاناتى</a></li>
               <li><a href="my_msg.html"><i class="fa fa-comments" aria-hidden="true"></i> الرسائل</a></li>
-              <li><a href="<?= base_url()?>profile/technical_support"><i class="fa fa-support" aria-hidden="true"></i> الدعم الفنى</a></li>
               <li><a href="my_balance.html"><i class="fa fa-money" aria-hidden="true"></i> الرصيد الاعلانى </a></li>
-			  <li><a href="<?= base_url()?>profile"><i class="fa fa-sliders" aria-hidden="true"></i> إعدادات الحساب</a></li>
+			  <li><a href="my_settings.html"><i class="fa fa-sliders" aria-hidden="true"></i> إعدادات الحساب</a></li>
 			  <li><a href="my_settings.html"><i class="fa fa-sliders" aria-hidden="true"></i> تسجيل الخروج</a></li>
             </ul>
           </div>
@@ -36,8 +35,8 @@
                 <div class="col-md-12">
                   <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
                     <ul class="nav nav-tabs" id="myTabs" role="tablist">
-                      <li role="presentation" class="active"><a href="#active_ads" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">الأعلانات</a></li>
-                      <li role="presentation" ><a href="<?= base_url()?>account/archive"  title="ارشيف الأعلانات">أرشيف الأعلانات</a></li>
+                      <li role="presentation" ><a href="<?= base_url()?>account"  >الأعلانات</a></li>
+                      <li role="presentation" class="active"><a href="<?= base_url()?>account/archive"  title="ارشيف الأعلانات">أرشيف الأعلانات</a></li>
 
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -118,15 +117,11 @@
                                 <td  style="border-left: 1px solid #cecece;text-align:center">
                                 <span> <i class="fa fa-heart" style="padding-left:5px;text-align:center; font-size:12px"></i>المفضلة:</span><span><?= get_table_total("favourites",array("course_id"=>$active->id));?></span>
                                 </td>
-                                <td class="view-message text-right"><a href="<?=base_url()?>account/delete?ID=<?= base64_encode($active->id);?>" title="<?= $active->name;?>" class="action-txt"><i class="fa fa-trash action" ></i>حذف</a>
-                                  <a href="" title="حذف"  class="action-txt"><i class="fa fa-edit action"></i>تعديل</a>
+                                <td class="view-message " colspan="3"><a href="<?=base_url()?>account/archive_delete?ID=<?= base64_encode($active->id);?>" title="<?= $active->name;?>" class="action-txt"><i class="fa fa-trash action" ></i>حذف نهائى</a>
                                   <a href="<?=base_url()?>advertising/details?ID=<?= base64_encode($active->id);?>" title="<?= $active->name;?>"  class="action-txt"><i class="fa fa-external-link action"></i>مشاهدة</a>
                                 </td>
                                 
-                                  <td colspan="3" style="border-left: 1px solid #cecece;text-align:center" >
-                                  <span class="txt_mess">زود المبيعات</span>
-                                  <span class="txt_mess">مشاركة الأعلان </span>
-                                </td>
+                                  
 
                               </tr>
                               <tr><td colspan="6s"><br></td></tr>

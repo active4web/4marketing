@@ -22,24 +22,50 @@ class Account extends MX_Controller {
 
 
 	public function index(){
-		$customer_id=$this->session->userdata('admin_id');
-
+		if($this->session->userdata("admin_id")==""){
+			redirect(base_url());
+		}
+		else {
+$customer_id=$this->session->userdata('admin_id');
 $data['site_info'] =$this->db->get_where('site_info')->result(); 
 $data['cat'] =$this->db->get_where('category',array('view'=>'1'))->result(); 
 $data['search_cat'] =$this->db->get_where('category',array('view'=>'1'))->result(); 
 $data['pages'] =$this->db->get_where('pages',array('active'=>'1'))->result(); 
 $data['city'] =$this->db->get_where('city',array('view'=>'1'))->result(); 
 $data_conent['site_info'] =$this->db->get_where('site_info')->result(); 
-$data_conent['active'] =$this->db->order_by("id","desc")->get_where('products',array("user_id"=>$customer_id,'delete_key'=>'1','expired_date'=>'1','view'=>'1'))->result(); 
-$data_conent['wait'] =$this->db->order_by("id","desc")->get_where('products',array("user_id"=>$customer_id,'view'=>'0'))->result(); 
-$data_conent['exited'] =$this->db->order_by("id","desc")->get_where('products',array("user_id"=>$customer_id,'expired_date'=>'0'))->result(); 
-$data_conent['rejected'] =$this->db->order_by("id","desc")->get_where('products',array("user_id"=>$customer_id,'view'=>'2'))->result(); 
+$data_conent['active'] =$this->db->order_by("id","desc")->get_where('products',array("user_id"=>$customer_id,'expired_date'=>'1','delete_key'=>'1'))->result(); 
 $this->load->view("index/include/head",$data );
 $this->load->view("index/include/header",$data );
 $this->load->view("current", $data_conent); 
 $this->load->view("index/include/footer",$data);
-    }   
+		}
+	}  
+	
+	public function archive(){
+		if($this->session->userdata("admin_id")==""){
+			redirect(base_url());
+		}
+		else {
+$customer_id=$this->session->userdata('admin_id');
+$data['site_info'] =$this->db->get_where('site_info')->result(); 
+$data['cat'] =$this->db->get_where('category',array('view'=>'1'))->result(); 
+$data['search_cat'] =$this->db->get_where('category',array('view'=>'1'))->result(); 
+$data['pages'] =$this->db->get_where('pages',array('active'=>'1'))->result(); 
+$data['city'] =$this->db->get_where('city',array('view'=>'1'))->result(); 
+$data_conent['site_info'] =$this->db->get_where('site_info')->result(); 
+$this->db->where('user_id',$customer_id);
+$this->db->where("(delete_key='0' OR expired_date='0')");
+$this->db->order_by("id","desc");
+$query = $this->db->get('products');
+$data_conent['active'] =$query->result();
+$this->load->view("index/include/head",$data );
+$this->load->view("index/include/header",$data );
+$this->load->view("archive", $data_conent); 
+$this->load->view("index/include/footer",$data);
+		}
+    } 
 
+	
 
 	public function logout(){
 		unset($_SESSION['admin_id']);
@@ -94,73 +120,6 @@ else {$this->db->insert("favourites",$data_fav);echo 1;}
 
 
 
-
-
-	public function dawrat(){
-
-		if($this->session->userdata("customer_id")==""){
-			redirect(base_url()."index");
-		}		
-
-		$user_type=$this->session->userdata("user_type");	
-		$customer_id=$this->session->userdata("customer_id");
-		
-		$tables = "products";
-		$config = array();
-		$config['base_url'] = base_url().'user/company/dawrat'; 
-		$config['total_rows'] = $this->data->record_count($tables,array("user_id"=>$customer_id,'delete_key'=>'1'),'','id','desc');
-		$config['per_page'] =30;
-		$config['full_tag_open'] = '<ul class="pagination">';
-		$config['full_tag_close'] = '</ul>';   
-		$config['last_link'] = '»»';
-		$config['last_tag_open'] = '<li>';
-		$config['last_tag_close'] = '</li>';
-		$config['first_link'] = '««';
-		$config['first_tag_open'] = '<li>';
-		$config['first_tag_close'] = '</li>';
-		$config['prev_link'] = 'السابق';
-		$config['prev_tag_open'] = '<li>';
-		$config['prev_tag_close'] = '</li>';
-		$config['next_link'] = 'التالى';
-		$config['next_tag_open'] = '<li>';
-		$config['next_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li class="active" style="padding:0px"><a>';
-		$config['cur_tag_close'] = '</a></li>';
-		$config['num_tag_open'] = '<li>';
-		$config['num_tag_close'] = '</li>';
-		//$config['suffix'] = '?' . http_build_query($_GET, '', "&");
-	  //$config['first_url'] = $config['base_url'].'?'.http_build_query($_GET);
-		$this->pagination->initialize($config);
-	if($this->uri->segment(3)){
-	$page = ($this->uri->segment(3)) ;
-	}
-	else{
-	$page =0;
-	}
-	
-	$rs = $this->db->get($tables);
-	if($rs->num_rows() == 0):
-	$data_conent["results"] = array();
-	$data_conent["links"] = array();
-	$data_conent['site_info'] =$this->db->get_where('site_info')->result(); 
-	$data['site_info'] =$this->db->get_where('site_info')->result(); 
-	$data_conent['customers'] =$this->db->get_where('customers',array("id"=>$customer_id))->result(); 
-	$data_conent['result_count'] =$this->db->get_where($tables, array("view"=>'1','delete_key'=>'2'))->result(); 
-	else:
-		$data_conent['customers'] =$this->db->get_where('customers',array("id"=>$customer_id))->result(); 
-	$data['site_info'] =$this->db->get_where('site_info')->result(); 
-	$data_conent['site_info'] =$this->db->get_where('site_info')->result(); 
-	$data_conent['result_count'] =$this->db->get_where($tables, array("user_id"=>$customer_id,'delete_key'=>'1'))->result(); 
-	$data_conent["results"] = $this->data->view_all_data($tables, array("user_id"=>$customer_id,'delete_key'=>'1'), $config["per_page"], $page,'id','desc');
-	$str_links = $this->pagination->create_links();
-	$data_conent["links"] = explode('&nbsp;',$str_links);
-	endif;
-	$this->load->view("index/include/head",$data );
-	$this->load->view("include/header",$data );
-	$this->load->view('dawrat',$data_conent);
-	$this->load->view("index/include/footer",$data);
-	  }
-	
 	  
 
 
@@ -305,17 +264,45 @@ else {$this->db->insert("favourites",$data_fav);echo 1;}
 	}
 
 	
-
-	public function delete(){    
-		if($this->session->userdata("customer_id")==""){
-			redirect(base_url()."index");
-		}		
-
-    $tab_id=$this->uri->segment(4);
-			$this->db->update("products",array("delete_key" => "0"),array("id"=>$tab_id));
-			redirect(base_url()."user/company/dawrat");	
+public function delete(){    
+if($this->session->userdata("admin_id")==""){
+redirect(base_url());
+}
+else {
+$tab_id=base64_decode($this->input->get("ID"));;
+$this->db->update("products",array("delete_key" => "0"),array("id"=>$tab_id));
+redirect(base_url()."account");	
 	}   
+}
 	
+
+
+	public function archive_delete(){
+    
+		$product_id=base64_decode($this->input->get("ID"));
+        if($product_id!=""){
+        $img = get_this('products',['id' => $product_id],'img');
+        if ($img != "") {
+        unlink("uploads/products/$img");
+        }
+       $img = get_this('images',['id_products' => $product_id],'image');
+            if ($img != "") {
+            unlink("uploads/products/$img");
+            }
+
+        $ret_value=$this->data->delete_table_row('products',array('id'=>$product_id));
+        $ret_value=$this->data->delete_table_row('images',array('id_products'=>$product_id));
+        $ret_value=$this->data->delete_table_row('favourites',array('course_id'=>$product_id));
+        $ret_value=$this->data->delete_table_row('messages',array('id_products'=>$product_id));
+        }
+ 
+ 
+     redirect(base_url()."account/archive", 'refresh');
+         
+        
+          }
+    
+
 }
 
 /* End of file Site.php */

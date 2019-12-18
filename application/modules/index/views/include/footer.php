@@ -397,3 +397,56 @@ expired_advert.addEventListener('message', function(e) {
     console.error('Connection aborted');
 }
 </script>
+
+<!--------------Start-Ticket Create----------------->
+<script>
+$(document).ready(function(){
+$(".ticket_action").click(function(){
+ $(".ticket_action").attr("disabled", "disabled");
+    var form=$("#form-ui");
+    var data=form.serialize();
+    var title=$("#title").val();
+     var tickets_types=$("#tickets_types").val();
+     var comment=$("#comment").val();
+     
+if(title==""){
+
+ $("#title").css("border","1px solid #ff0000");
+ $(".ticket_action").attr("disabled",false);
+}
+if(tickets_types==""){
+  $("#tickets_types").css("border","1px solid #ff0000");
+  $(".ticket_action").attr("disabled",false);
+}
+if(comment==""){
+  $("#comment").css("border","1px solid #ff0000");
+  $(".ticket_action").attr("disabled",false);
+}
+
+//alert(data);
+
+if(title!=""&&tickets_types!=""&&comment!=""){
+$.ajax({
+        type:"POST",
+        url:"<?= base_url()?>profile/ticket_action",
+        data:data,
+        success: function(response){
+        if(response == 1){
+          toastr.success("تم فتح التذكرة بنجاح",  {timeOut: 2000});
+          //location.assign("<?php echo base_url()?>profile/technical_support");
+          $(":text").val('');
+          $("textarea").val("");
+          $("#tickets_types option:first").attr('selected','selected');
+          $(".ticket_action").attr("disabled",false);
+             }
+        
+        else if(response == 0){
+          location.assign("<?php echo base_url()?>");
+        }
+        
+        }
+    });
+}
+});
+});
+</script>

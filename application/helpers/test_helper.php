@@ -5,20 +5,20 @@
 function get_table_filed($table, $where = array() , $filed = null)
 
 {
-
 	$ci= & get_instance();
-
 	$query = $ci->db->get_where($table, $where);
-
 	foreach($query->result() as $row) {
-
 		return $row->$filed;
-
 	}
-
 }
 
+function get_table_total($table, $where = array())
 
+{
+	$ci= & get_instance();
+	$query = $ci->db->get_where($table, $where)->result();
+		return count($query);
+}
 
 function get_name($table,$filed)
 

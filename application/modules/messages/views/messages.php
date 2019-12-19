@@ -4,7 +4,7 @@
 	<div class="col-xs-12">
 	  <ul>
 		<li class="home"> <a title="الرئيسية" href="<?= base_url()?>/home">الرئيسية</a><span>&raquo;</span></li>
-		<li><strong><a title="إعلاناتى">الدعم الفنى</a> </strong></li>
+		<li><strong><a title="الرسائل">الرسائل</a> </strong></li>
 	  </ul>
 	</div>
   </div>
@@ -28,8 +28,9 @@
                 <div class="col-md-12">
                   <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
                     <ul class="nav nav-tabs" id="myTabs" role="tablist">
-                      <li role="presentation" class="active"><a href="#active_ads" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">الدعم الفنى</a></li>
-                      <li role="presentation" ><a href="<?= base_url()?>profile/create_ticket" >انشاء تذكرة</a></li>
+                      <li role="presentation" class="active"><a href="#active_ads" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">الرسائل الواردة</a></li>
+                      <li role="presentation" ><a href="<?= base_url()?>messages/send" >الرسائل الصادرة</a></li>
+                      <li role="presentation" ><a href="<?= base_url()?>messages/archive" >أرشيف الرسائل</a></li>
 
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -47,20 +48,18 @@
                                   <td  class="view-message  dont-show td-header">
                                      م
                                   </td>
-                                  <td class="view-message  dont-show td-header">التاريخ</td>
-                                  <td class="view-message td-header ">العنوان</td>
-                                  <td class="view-message  inbox-small-cells td-header">مشاهدة</td>
+                                  <td class="view-message  dont-show td-header">الرسائل</td>
+                                  <td class="view-message td-header ">الإعلانات	</td>
+                                  <td class="view-message  inbox-small-cells td-header">التاريخ</td>
                 </tr>
-                
                               <?php
-
                               $count=0;
                               foreach($results as $data) {
                                 $count++;
-                                $ticket_type_name= get_table_filed('tickets_types',array('id'=>$data->ticket_type_id),"name");
-                                $color= get_table_filed('tickets_types',array('id'=>$data->ticket_type_id),"color");
-                   
-
+                                $productname= get_table_filed('products',array('id'=>$data->id_products),"name");
+                                $sender_name= get_table_filed('customers',array('id'=>$data->send_id),"user_name");
+                                $total=get_table_total("messages",array("id_reply"=>$data->id));
+                                $my_sender= get_table_filed('messages',array("id_reply"=>$data->id,"send_id"=>$this->session->userdata('admin_id')),"id");
 							  ?>
                               <tr class="unread">
 
@@ -70,20 +69,34 @@
                                   </td>
                                   </a>
                                  
-								  <td class="inbox-small-cells"> <a href="<?= base_url()?>profile/ticket/<?= $data->id;?>"><?= $data->created_at;?></a></td>
+								  <td class="inbox-small-cells"> 
+                 <a href="<?= base_url()?>messages/archive_delete/<?= $data->id;?>" title="ارسل الى الارشيف"><i class="fa fa-trash"></i></a> 
+                  <a href="<?= base_url()?>profile/ticket/<?= $data->id;?>">
+                   <?php if(strlen($sender_name)>10){echo  mb_substr($sender_name,0,10)."...";}else {echo  mb_substr($sender_name,0,10);}?>
+                             <span style="padding-right:4px"><?php if($my_sender!=""){?>, انت <?php }?></span> 
+                   <?php if( $total>0){?>(<?=  $total?>)<?php }?>
+                  </a>
+                </td>
                  
                    <td class="view-message  dont-show">
                    <a href="<?= base_url()?>profile/ticket/<?= $data->id;?>">
-                   <?php if(strlen($data->title)>40){echo  mb_substr($data->title,0,40)."...";}else {echo  mb_substr($data->title,0,40);}?>
+                   <div style="font-size:14px">
+                   <?php if(strlen($productname)>30){echo  mb_substr($productname,0,30)."...";}else {echo  mb_substr($dproductname,0,30);}?>
+                   </div>
+                   <div style="font-size:13px;padding-top:10px">
+                   <?php if(strlen($data->message)>40){echo  mb_substr($data->message,0,40)."...";}else {echo  mb_substr($data->message,0,40);}?>
+                  </div>
+                  </a>
+                  
+                  </td>
+
+                  <td class="view-message  dont-show">
+                   <a href="<?= base_url()?>profile/ticket/<?= $data->id;?>">
+                   <?= $data->creation_date?>
                   </a>
                   </td>
                               
-                                
-                                  <td class="view-message"> 
-                                   <a href="<?= base_url()?>profile/ticket/<?= $data->id;?>">  
-                                   <span style="background:<?= $color;?>" class="ticket">
-                                  <?= $ticket_type_name;?></span> </a>
-                                </td>
+                           
                                  
                                     </tr>
 

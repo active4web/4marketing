@@ -10737,3 +10737,12 @@ background-color: #0098d0;padding: 6px 10px;border-radius: 0.4em;
 			font-weight: 700;
 			text-align:center;
 		}
+		.ticket-title{
+			font-size:18px;
+			font-weight:800;
+			text-align:center;
+			padding:10px;
+		}
+		.user{line-height:30px;font-size:14px;margin: 12px 0px;}
+		.user .content{border:1px solid #ccc; padding:10px; background-color:#016596;color:#fff;border-radius:0.4em;}
+		.user .content.management{background-color: #ea1852ab;}

@@ -88,14 +88,14 @@ $this->session->set_userdata(array('curt_id' => $curt_id));
                           <!--Start My Account-->
                           <div class="links">
                             <div class="jtv-user-info">
-                            <?php if($this->session->userdata("device_id")!=""){?>
+                            <?php if($this->session->userdata("admin_id")!=""){?>
                               <div class="dropdown"> <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>حسابى </span> <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu">
                                   <li><a href="<?= base_url()?>account"><i class="fa fa-bullhorn" aria-hidden="true"></i> إعلاناتى</a></li>
                                   <li><a href="<?= base_url()?>account/my_msg"><i class="fa fa-comments" aria-hidden="true"></i> الرسائل 
 <?php if($mychat_num>0){?><span>(<?= $mychat_num?>)</span><?php }?></a></li>
-                                  <li><a href="<?= base_url()?>account/my_settings"><i class="fa fa-sliders" aria-hidden="true"></i> إعدادات الحساب</a></li>
-                                  <li><a href="<?= base_url()?>account/logout"><i class="fa fa-power-off" aria-hidden="true"></i> تسجيل الخروج</a></li>
+                                  <li><a href="<?= base_url()?>profile/"><i class="fa fa-user" aria-hidden="true"></i> إعدادات الحساب</a></li>
+                                  <li><a href="<?= base_url()?>account/logout"><i class="fa fa-lock" aria-hidden="true"></i> تسجيل الخروج</a></li>
                                 </ul>
                               </div>
                             <?php } else {?>

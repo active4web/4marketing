@@ -450,3 +450,203 @@ $.ajax({
 });
 });
 </script>
+<!------------------------------------------------------------------>
+<!-----------------------My account----------------------------------->
+
+<script>
+$(document).ready(function(){
+$(".profile_action").click(function(){
+ $(".profile_action").attr("disabled", "disabled");
+    var form=$("#form-ui");
+    var data=form.serialize();
+    var title=$("#title").val();
+     var phone=$("#phone").val();
+     var email=$("#email").val();
+     var city_id=$("#city_id").val();
+if(title==""){
+
+ $("#title").css("border","1px solid #ff0000");
+ $(".profile_action").attr("disabled",false);
+}
+if(phone==""){
+  $("#phone").css("border","1px solid #ff0000");
+  $(".profile_action").attr("disabled",false);
+}
+if(email==""){
+  $("#email").css("border","1px solid #ff0000");
+  $(".profile_action").attr("disabled",false);
+}
+
+if(city_id==""){
+  $("#city_id").css("border","1px solid #ff0000");
+  $(".profile_action").attr("disabled",false);
+}
+//alert(data);
+
+if(title!=""&&city_id!=""&&email!=""&&phone!=""&&title!=""){
+$.ajax({
+        type:"POST",
+        url:"<?= base_url()?>profile/edit_profile",
+        data:data,
+        success: function(response){
+          //alert(response);
+        if(response == 1){
+          location.assign("<?php echo base_url()?>profile");
+          $(".profile_action").attr("disabled",false);
+             }
+        
+        else if(response ==2){
+          toastr.error("رقم التليفون موجود سابقا",  {timeOut: 2000});
+          $(".profile_action").attr("disabled",false);
+        }
+        else if(response ==3){
+          toastr.error("البريد الألكترونى موجد سابقا",  {timeOut: 2000});
+          $(".profile_action").attr("disabled",false);
+        }
+        
+        }
+    });
+}
+});
+});
+</script>
+<!------------------------------------------------------------------>
+<!----------------------------Password------------------------------>
+
+
+<script>
+$(document).ready(function(){
+$("#oldpassword").keyup(function(){
+var oldpassword=$("#oldpassword").val();
+if(oldpassword==""){
+ $("#oldpassword").css("border","1px solid #ff0000");
+ $(".changepassword_action").attr("disabled",false);
+}
+
+var data={oldpassword:oldpassword}
+if(oldpassword!=""){
+$.ajax({
+        type:"POST",
+        url:"<?= base_url()?>profile/check_password",
+        data:data,
+        success: function(response){
+         //alert(response);
+        if(response == 1){
+          $("#oldpassword").css("border","1px solid #CFCFCF");
+          $(".changepassword_action").attr("disabled",false);
+          $(".error_currentpassword").fadeOut();
+             }
+        
+        else if(response ==2){
+          $(".error_currentpassword").fadeIn();
+          $("#oldpassword").css("border","1px solid #ff0000");
+          $(".changepassword_action").attr("disabled","disabled");
+        }
+        else if(response ==0){
+          $("#oldpassword").css("border","1px solid #ff0000");
+          $(".changepassword_action").attr("disabled","disabled");
+        }
+        
+        }
+    });
+}
+});
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+$("#confirmpassword").keyup(function(){
+var confirmpassword=$("#confirmpassword").val();
+var newpassword=$("#newpassword").val();
+
+if(confirmpassword==""){
+ $("#confirmpassword").css("border","1px solid #ff0000");
+ $(".changepassword_action").attr("disabled","disabled");
+}
+if(newpassword!=confirmpassword){
+ $("#newpassword").css("border","1px solid #ff0000");
+ $("#confirmpassword").css("border","1px solid #ff0000");
+ $(".error_confirmpassword").fadeIn();
+ $(".changepassword_action").attr("disabled","disabled");
+}
+else if(newpassword==confirmpassword){
+  $("#newpassword").css("border","1px solid #CFCFCF");
+ $("#confirmpassword").css("border","1px solid #CFCFCF");
+$(".error_confirmpassword").fadeOut();
+$(".changepassword_action").attr("disabled",false);
+}
+
+});
+});
+</script>
+
+<script>
+$(document).ready(function(){
+$(".changepassword_action").click(function(){
+ $(".changepassword_action").attr("disabled", "disabled");
+    var form=$("#form-ui");
+    var data=form.serialize();
+    var newpassword=$("#newpassword").val();
+     var confirmpassword=$("#confirmpassword").val();
+     var oldpassword=$("#oldpassword").val();
+
+if(oldpassword==""){
+ $("#oldpassword").css("border","1px solid #ff0000");
+ $(".changepassword_action").attr("disabled",false);
+}
+if(newpassword==""){
+  $("#newpassword").css("border","1px solid #ff0000");
+  $(".changepassword_action").attr("disabled",false);
+}
+if(confirmpassword==""){
+  $("#confirmpassword").css("border","1px solid #ff0000");
+  $(".changepassword_action").attr("disabled",false);
+}
+
+
+
+if(oldpassword!=""&&newpassword!=""&&confirmpassword!=""){
+$.ajax({
+        type:"POST",
+        url:"<?= base_url()?>profile/password_action",
+        data:data,
+        success: function(response){
+          alert(response);
+        if(response == 1){
+          location.assign("<?php echo base_url()?>profile");
+             }
+        
+        else if(response ==2){
+          $(".error_currentpassword").fadeIn();
+          $("#oldpassword").css("border","1px solid #ff0000");
+        }
+       
+        
+        }
+    });
+}
+});
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+$(".add-to-remove").click(function(){
+var fav_id=$(this).nextAll("input").val();
+var data={fav_id:fav_id}
+$.ajax({
+        type:"POST",
+        url:"<?= base_url()?>profile/delete_fav",
+        data:data,
+        success: function(response){
+        if(response == 1){
+          location.assign("<?php echo base_url()?>profile/favorite");
+             }
+    }
+    });
+});
+});
+</script>

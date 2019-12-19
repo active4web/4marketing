@@ -13,20 +13,13 @@
 
 <div class="main-container col2-left-layout">
     <div class="container">
-	  
       <div class="row">
-        <aside class="profile col-sm-3 col-xs-12">
+
+      <aside class="profile col-sm-3 col-xs-12">
 		<h3><br></h3>
-          <div class="sidebar">           
-            <ul>
-              <li class="current"><a href="my_ads.html"><i class="fa fa-bullhorn" aria-hidden="true"></i> إعلاناتى</a></li>
-              <li><a href="my_msg.html"><i class="fa fa-comments" aria-hidden="true"></i> الرسائل</a></li>
-              <li><a href="my_balance.html"><i class="fa fa-money" aria-hidden="true"></i> الرصيد الاعلانى </a></li>
-			  <li><a href="my_settings.html"><i class="fa fa-sliders" aria-hidden="true"></i> إعدادات الحساب</a></li>
-			  <li><a href="my_settings.html"><i class="fa fa-sliders" aria-hidden="true"></i> تسجيل الخروج</a></li>
-            </ul>
-          </div>
+         <?php include("assets/sidebar.php")?>
         </aside> <!--//Aside-->
+
         <div class="col-main col-sm-9 col-xs-12">
 
 		  

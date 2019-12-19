@@ -17,7 +17,7 @@
                                         <span class="selected"></span>
                                     </a>
                     </li>
-<?
+<?php
 $reply_counts=$this->db->get_where("tickets",array("status_id"=>'0'))->result();
 $users_accounts=$this->db->get_where("customers")->result();
 $products_accounts=$this->db->get_where("products",array("view"=>'0'))->result();
@@ -29,7 +29,7 @@ $social_archive=$this->db->get_where("soical_advertising",array("view"=>'1','sta
 	<li class="nav-item start <?php if($curt=='setting'){echo'active open';}?>">
 						<a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="icon-settings"></i>
-								<span class="title">الاعدادات <span style="color:red" class="ticket_nofiy"><? if(count($reply_counts)>0){echo "(".count($reply_counts).")"; };?></span></span>
+								<span class="title">الاعدادات <span style="color:red" class="ticket_nofiy"><?php if(count($reply_counts)>0){echo "(".count($reply_counts).")"; };?></span></span>
                                 <span class="arrow"></span>
                             </a>
 							<ul class="sub-menu">
@@ -68,7 +68,7 @@ $social_archive=$this->db->get_where("soical_advertising",array("view"=>'1','sta
                                 <li class="nav-item  <?php if($curt=='tickets'){echo'active open';}?>">
                                     <a href="<?=base_url()?>admin/tickets/" class="nav-link ">
                                         <i class="icon-envelope"></i>
-                                        <span class="title">التذاكر <span style="color:red" class="ticket_nofiy"><? if(count($reply_counts)>0){echo "(".count($reply_counts).")"; };?></span></span>
+                                        <span class="title">التذاكر <span style="color:red" class="ticket_nofiy"><?php if(count($reply_counts)>0){echo "(".count($reply_counts).")"; };?></span></span>
                                     </a>
 								</li>
 								
@@ -126,7 +126,7 @@ $social_archive=$this->db->get_where("soical_advertising",array("view"=>'1','sta
                       <li class="nav-item start <?php if($curt=='customers'){echo'active open';}?>">
 						<a href="javascript:;" class="nav-link nav-toggle"><i class="fa fa-users"></i>
 								<span class="title">العضويات 
-					<span style="color:red" class="user_nofiy"><? if(count($users_accounts)>0){echo "(".count($users_accounts).")"; };?></span>
+					<span style="color:red" class="user_nofiy"><?php if(count($users_accounts)>0){echo "(".count($users_accounts).")"; };?></span>
 								</span>
                                 <span class="arrow"></span>
                             </a>
@@ -149,14 +149,14 @@ $social_archive=$this->db->get_where("soical_advertising",array("view"=>'1','sta
                       <li class="nav-item start <?php if($curt=='courses'){echo'active open';}?>">
 						<a href="javascript:;" class="nav-link nav-toggle"><i class="fa fa-opencart"></i>
                                 <span class="title">الاعلانات</span>
-                                <span style="color:red" class="products_notifation"><? if(count($products_accounts)>0){echo "(".count($products_accounts).")"; };?></span>
+                                <span style="color:red" class="products_notifation"><?php if(count($products_accounts)>0){echo "(".count($products_accounts).")"; };?></span>
                                 <span class="arrow"></span>
                             </a>
 							<ul class="sub-menu">
                             <li class="nav-item">
                                     <a href="<?=base_url()?>admin/courses/inside" class="nav-link ">
                                         <i class="fa fa-opencart"></i>
-                                        <span style="color:red" class="products_notifation"><? if(count($products_accounts)>0){echo "(".count($products_accounts).")"; };?></span>
+                                        <span style="color:red" class="products_notifation"><?php if(count($products_accounts)>0){echo "(".count($products_accounts).")"; };?></span>
                                         <span class="title">الاعلانات </span>
                                     </a>
 								</li>
@@ -180,7 +180,7 @@ $social_archive=$this->db->get_where("soical_advertising",array("view"=>'1','sta
 						<a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="fa fa-credit-card"></i>
 								<span class="title">الحسابات
-		<span style="color:red" class="banks_nofiy"><? if((count($payments_accounts)+count($payments_accounts_only))>0){echo "(".(count($payments_accounts)+count($payments_accounts_only)).")"; };?></span>							
+		<span style="color:red" class="banks_nofiy"><?php if((count($payments_accounts)+count($payments_accounts_only))>0){echo "(".(count($payments_accounts)+count($payments_accounts_only)).")"; };?></span>							
 								</span>
                                 <span class="arrow"></span>
                             </a>
@@ -198,7 +198,7 @@ $social_archive=$this->db->get_where("soical_advertising",array("view"=>'1','sta
                                     <a href="<?=base_url()?>admin/banks/bank_payments" class="nav-link ">
                                         <i class="fa fa-credit-card"></i>
                                         <span class="title"> الدفع البنكى 
-  <span style="color:red" class="bank_payments"><? if(count($payments_accounts_only)>0){echo "(".count($payments_accounts_only).")"; };?></span>                                      
+  <span style="color:red" class="bank_payments"><?php if(count($payments_accounts_only)>0){echo "(".count($payments_accounts_only).")"; };?></span>                                      
                                     </span>
                                     </a>
 								</li>
@@ -207,7 +207,7 @@ $social_archive=$this->db->get_where("soical_advertising",array("view"=>'1','sta
                                     <a href="<?=base_url()?>admin/banks/requested_courses" class="nav-link ">
                                         <i class="fa fa-cart-plus"></i>
                                         <span class="title">طلبات الحملات الاعلانية
-                 <span style="color:red" class="banks_nofiy"><? if(count($payments_accounts)>0){echo "(".count($payments_accounts).")"; };?></span>                       
+                 <span style="color:red" class="banks_nofiy"><?php if(count($payments_accounts)>0){echo "(".count($payments_accounts).")"; };?></span>                       
                                         
                                         </span>
                                     </a>
@@ -259,7 +259,7 @@ $social_archive=$this->db->get_where("soical_advertising",array("view"=>'1','sta
                                     <a href="<?=base_url()?>admin/messages" class="nav-link ">
                                         <i class="icon-call-end"></i>
                                         <span class="title">رسائل الأعلانات</span>
-                                          <span style="color:red" class="total_messages_notifation"><? if(count($total_new_message)>0){echo "(".count($total_new_message).")"; };?></span>
+                                          <span style="color:red" class="total_messages_notifation"><?php if(count($total_new_message)>0){echo "(".count($total_new_message).")"; };?></span>
                                     </a>
                                 </li>
                              	

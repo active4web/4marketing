@@ -19,8 +19,8 @@ class Pages extends MX_Controller {
     
 
     public function register(){
- if($this->session->userdata("device_id")!=""){
-redirect(base_url()."account/my_ads");
+ if($this->session->userdata("admin_id")!=""){
+redirect(base_url()."account/");
       }
 else {
   $data['site_info'] =$this->db->get_where('site_info')->result(); 
@@ -38,8 +38,8 @@ else {
 
     
     public function index(){
- if($this->session->userdata("device_id")!=""){
-redirect(base_url()."account/my_ads");
+ if($this->session->userdata("admin_id")!=""){
+redirect(base_url()."account");
       }
 else {
   $data['site_info'] =$this->db->get_where('site_info')->result(); 
@@ -57,7 +57,7 @@ else {
 
 
 function fogetpassword(){
-  if($this->session->userdata("customer_id")!=""){
+  if($this->session->userdata("admin_id")!=""){
  redirect(base_url()."user");
        }
  else {

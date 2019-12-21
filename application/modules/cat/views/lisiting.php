@@ -1,4 +1,3 @@
-
  <div class="breadcrumbs">
     <div class="container">
       <div class="row">
@@ -116,7 +115,12 @@ if($this->session->userdata("device_id")!=""){
   else{
     $favourite_key=0;	
   }
-}
+  $where="user_archive_reciver='1'and user_archive_sender='1' and id_products=$data->id AND (server_id=$customer_id OR send_id=$customer_id)";
+  $maincount=get_message_total("messages",$where);
+  $where1="id_reply=0 and user_archive_reciver='1'and user_archive_sender='1' and id_products=$data->id AND (server_id=$customer_id OR send_id=$customer_id)";
+  $idm=get_message_id('messages',$where1,"id");
+  }
+  
 $special=$data->special;
 $currency=get_name('currency',$data->currency_id);
 $city=get_name('city',$data->city_id);
@@ -139,7 +143,7 @@ $city=get_name('city',$data->city_id);
                         <div class="item-content">
                           <div class="row">
                           <div class="cat col-md-12"> <span style="float:right">
-                          <a href="<?=base_url()?>city?ID=city_id"> <?=$city?></a></span>
+                          <a href="<?=base_url()?>cat/city?ID=<?= $data->city_id?>"> <?=$city?></a></span>
                           <span  style="float:left"><a href="<?=base_url()?>cat/lisiting?ID=<?= base64_encode($category_id);?>"><?=mb_substr( $category_name,0,50)?></a></span>
                         </div>
                           <div class="timing col-md-12">
@@ -167,7 +171,15 @@ $city=get_name('city',$data->city_id);
 <i class="fa fa-heart  myfav"></i>
 </div>
 <input type="hidden" class="advertising_ID" value="<?= $data->id;?>">
- <a  class="advertising-action messages fa fa-envelope" title="الدردشة"></a>
+
+
+<?php if($maincount>0){?>
+         <a  href="<?= base_url()?>messages/message/<?= $idm;?>" class="advertising-action messages fa fa-envelope"  title="الدردشة">
+<?php echo $maincount;} else {?>
+  <a  href="<?= base_url()?>messages/send_message/<?= base64_encode($data->id);?>" class="advertising-action messages fa fa-envelope"  title="الدردشة">
+
+<?php }?></a>
+
                                 </div>
 
                       </div>

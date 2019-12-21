@@ -28,9 +28,9 @@
                 <div class="col-md-12">
                   <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
                     <ul class="nav nav-tabs" id="myTabs" role="tablist">
-                      <li role="presentation" class="active"><a href="#active_ads" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">الرسائل الواردة</a></li>
+                      <li role="presentation"><a href="<?= base_url()?>messages/archive"  >الرسائل الواردة</a></li>
                       <li role="presentation" ><a href="<?= base_url()?>messages/send" >الرسائل الصادرة</a></li>
-                      <li role="presentation" ><a href="<?= base_url()?>messages/archive" >أرشيف الرسائل</a></li>
+                      <li role="presentation"  class="active"><a href="" >أرشيف الرسائل</a></li>
 
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -54,12 +54,25 @@
                 </tr>
                               <?php
                               $count=0;
-                              foreach($results as $data) {
+                              foreach($results as $arch) {
+                                $res=$this->db->get_where("messages",array("id"=>$arch->id_message))->result();
+                                foreach($res as $data)
                                 $count++;
                                 $productname= get_table_filed('products',array('id'=>$data->id_products),"name");
-                                $sender_name= get_table_filed('customers',array('id'=>$data->send_id),"user_name");
+                                if($data->send_id==$this->session->userdata('admin_id')){
+                                  $sender_name="انت";
+                                }
+                                else {
+                                  $sender_name= get_table_filed('customers',array('id'=>$data->send_id),"user_name");
+                                }
+
+                                if($data->server_id==$this->session->userdata('admin_id')){
+                                  $reciver_name="انت";
+                                }
+                                else {
+                                  $reciver_name= get_table_filed('customers',array('id'=>$data->server_id),"user_name");
+                                }
                                 $total=get_table_total("messages",array("id_reply"=>$data->id));
-                                $my_sender= get_table_filed('messages',array("id_reply"=>$data->id,"send_id"=>$this->session->userdata('admin_id')),"id");
 							  ?>
                               <tr class="unread">
 
@@ -70,10 +83,13 @@
                                   </a>
                                  
 								  <td class="inbox-small-cells"> 
-                 <a href="<?= base_url()?>messages/archive_delete/<?= $data->id;?>" title="ارسل الى الارشيف"><i class="fa fa-trash"></i></a> 
+                 <a href="<?= base_url()?>messages/archive_delete_final/<?= $data->id;?>" title="حذف نهائى"><i class="fa fa-trash"></i></a> 
                   <a href="<?= base_url()?>messages/message/<?= $data->id;?>">
                    <?php if(strlen($sender_name)>10){echo  mb_substr($sender_name,0,10)."...";}else {echo  mb_substr($sender_name,0,10);}?>
-                             <span style="padding-right:4px"><?php if($my_sender!=""){?>, انت <?php }?></span> 
+                   ,
+                   
+                   <?php if(strlen($reciver_name)>10){echo  mb_substr($reciver_name,0,10)."...";}else {echo  mb_substr($reciver_name,0,10);}?>
+
                    <?php if( $total>0){?>(<?=  $total?>)<?php }?>
                   </a>
                 </td>

@@ -1,41 +1,23 @@
-
-
  <div class="breadcrumbs">
-
     <div class="container">
-
       <div class="row">
-
         <div class="col-xs-12">
-
           <ul>
-
             <li class="home"> <a title="الرئيسية" href="<?= base_url()?>/home">الرئيسية</a><span>&raquo;</span></li>
-
             <li><strong><a title="كل الأعلانات" href="<?= base_url()?>cat/all">كل الأعلانات</a> </strong></li>
-
           </ul>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
 
 
 
 <div class="home-tab">
-
     <div class="container">
-
       <div class="row">
-
    <div class="col-md-12">
-
    <div class="page-title">
-
               <h2>
 
 <?= 
@@ -132,8 +114,17 @@ if($this->session->userdata("device_id")!=""){
   else{
     $favourite_key=0;	
   }
+$where="user_archive_reciver='1'and user_archive_sender='1' and id_products=$data->id AND (server_id=$customer_id OR send_id=$customer_id)";
+$maincount=get_message_total("messages",$where);
+$where1="id_reply=0 and user_archive_reciver='1'and user_archive_sender='1' and id_products=$data->id AND (server_id=$customer_id OR send_id=$customer_id)";
+$idm=get_message_id('messages',$where1,"id");
 }
+$city_name=get_table_filed('city',array('id'=>$data->city_id),"name");
 $special=$data->special;
+
+$currency_name=get_table_filed('currency',array('id'=>$data->currency_id),"name");
+
+
 ?>
 
 
@@ -158,7 +149,7 @@ $special=$data->special;
 
                           <div class="cat col-md-12"> <span style="float:right">
 
-                          <a href="<?=base_url()?>city?ID=city_id"> <?=mb_substr( $data->city_id,0,50)?></a></span>
+                          <a href="<?=base_url()?>cat/city?ID=<?= $data->city_id?>"> <?=mb_substr( $city_name,0,50)?></a></span>
 
                           <span  style="float:left"><a href="<?=base_url()?>cat/grid?ID=<?= base64_encode($category_id);?>"><?=mb_substr( $category_name,0,50)?></a></span>
 
@@ -190,7 +181,7 @@ $special=$data->special;
 
                       <div class="product-item-actions">
 
-                        <div class="pro-actions"> <span class="pricing"><?= $data->price?> د.ك</span></div>
+                        <div class="pro-actions"> <span class="pricing"><?= $data->price?> <?= $currency_name?></span></div>
                         <?php 
                                 if($special==1){
                                 ?>
@@ -211,10 +202,11 @@ $special=$data->special;
 
 
 <input type="hidden" class="advertising_ID" value="<?= $data->id;?>">
-
-                          <a  class="advertising-action messages fa fa-envelope" title="الدردشة">
-
-                       </a>
+<?php if($maincount>0){?>
+         <a  href="<?= base_url()?>messages/message/<?= $idm;?>" class="advertising-action messages fa fa-envelope"  title="الدردشة">
+<?php echo $maincount;} else {?>
+  <a  href="<?= base_url()?>messages/send_message/<?= base64_encode($data->id);?>" class="advertising-action messages fa fa-envelope"  title="الدردشة">
+<?php }?></a>
 
                         </div>
 

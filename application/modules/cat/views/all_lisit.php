@@ -130,8 +130,13 @@ $favourite_key=1;
 else{
 $favourite_key=0;	
 }
-
+$where="user_archive_reciver='1'and user_archive_sender='1' and id_products=$data->id AND (server_id=$customer_id OR send_id=$customer_id)";
+$maincount=get_message_total("messages",$where);
+$where1="id_reply=0 and user_archive_reciver='1'and user_archive_sender='1' and id_products=$data->id AND (server_id=$customer_id OR send_id=$customer_id)";
+$idm=get_message_id('messages',$where1,"id");
 }
+$city_name=get_table_filed('city',array('id'=>$data->city_id),"name");
+$currency_name=get_table_filed('currency',array('id'=>$data->currency_id),"name");
 
 ?>
 
@@ -156,7 +161,7 @@ $favourite_key=0;
                       <div class="row">
                       <div class="cat col-md-12"> 
                       <span style="float:right">
-                      <a href="<?=base_url()?>city?ID=city_id"> <?=mb_substr( $data->city_id,0,50)?></a></span>
+                      <a href="<?=base_url()?>cat/city?ID=<?= $data->city_id?>"> <?=mb_substr( $city_name,0,50)?></a></span>
                       <span  style="float:left"><a href="<?=base_url()?>cat/lisiting?ID=<?= base64_encode($category_id);?>"><?=mb_substr( $category_name,0,50)?></a></span>
 
                     </div>
@@ -180,14 +185,18 @@ $favourite_key=0;
                 </div>
                 <div class="box-hover">
                   <div class="product-item-actions">
-                    <div class="pro-actions"> <span class="pricing"><?= $data->price?> د.ك</span></div>
+                    <div class="pro-actions"> <span class="pricing"><?= $data->price?> <?= $currency_name?></span></div>
                     <div class="add-to-links" data-role="add-to-links">
 <div  class="add-to-fav advertising-action"  style="color:#<?php if($favourite_key){?>e80f55;<?php }?>" title="اضف الى المفضلة" > 
 <i class="fa fa-heart  myfav"></i>
 </div>
 <input type="hidden" class="advertising_ID" value="<?= $data->id;?>">
-                      <a  class="advertising-action messages fa fa-envelope" title="الدردشة">
-                   </a>
+<?php if($maincount>0){?>
+         <a  href="<?= base_url()?>messages/message/<?= $idm;?>" class="advertising-action messages fa fa-envelope"  title="الدردشة">
+<?php echo $maincount;} else {?>
+  <a  href="<?= base_url()?>messages/send_message/<?= base64_encode($data->id);?>" class="advertising-action messages fa fa-envelope"  title="الدردشة">
+
+<?php }?></a>
                     </div>
                   </div>
                 </div>

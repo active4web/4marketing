@@ -135,7 +135,6 @@ else {$this->db->insert("favourites",$data_fav);echo 1;}
 		$city_id=get_table_filed('products',array("id"=>$tab_id),"city_id");
 		$cat_name=get_table_filed('category',array("id"=>$cat_id),"name");
 		$city_name=get_table_filed('city',array("id"=>$city_id),"name");
-
 		$data_conent["results"] =$this->db->get_where('bag_info',array('view'=>'1','id'=>$tab_id))->result(); 
 		$data_conent["course_info"] =$this->db->get_where('course_info',array('id_course'=>$tab_id))->result(); 
 		$data_conent["bag_info"] =$this->db->get_where('products',array('id'=>$tab_id))->result(); 

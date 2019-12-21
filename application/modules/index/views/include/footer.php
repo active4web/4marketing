@@ -450,7 +450,7 @@ $.ajax({
 });
 });
 </script>
-<!------------------------------------------------------------------>
+<!--------------------------End Ticket---------------------------------------->
 <!-----------------------My account----------------------------------->
 
 <script>
@@ -650,3 +650,144 @@ $.ajax({
 });
 });
 </script>
+
+
+
+<!--------------Start-message Create----------------->
+<script>
+$(document).ready(function(){
+$(".message_action").click(function(){
+ $(".message_action").attr("disabled", "disabled");
+    var form=$("#form-ui");
+    var data=form.serialize();
+    var title=$("#title").val();
+     var comment=$("#comment").val();
+     
+if(title==""){
+ $("#title").css("border","1px solid #ff0000");
+ $(".message_action").attr("disabled",false);
+}
+
+if(comment==""){
+  $("#comment").css("border","1px solid #ff0000");
+  $(".message_action").attr("disabled",false);
+}
+
+//alert(data);
+
+if(title!=""&&comment!=""){
+$.ajax({
+        type:"POST",
+        url:"<?= base_url()?>messages/message_action",
+        data:data,
+        success: function(response){
+         // alert(response);
+        if(response == 1){
+          toastr.success("تم ارسال الرسالة بنجاح",  {timeOut: 2000});
+          //location.assign("<?php echo base_url()?>profile/technical_support");
+          $("textarea").val("");
+          $(".message_action").attr("disabled",false);
+             }
+        
+        else if(response == 0){
+          location.assign("<?php echo base_url()?>");
+        }
+        
+        }
+    });
+}
+});
+});
+</script>
+<!------------------------------------------------------------------>
+<!-----------------------End Message----------------------------------->
+
+<!--------------Start-Add Advertising----------------->
+
+
+<script>
+function getState(val) {
+   // alert(val);
+$.ajax({
+	type: "POST",
+	url: "<?=base_url()?>admin/users/get_state",
+	data:'country_id='+val,
+	success: function(data){
+	  //alert(data);
+		$("#state-list").html(data);
+	}
+	});
+}
+</script>
+
+
+<script>
+$(document).ready(function(){
+$(".add_adv").click(function(){
+ $(".add_adv").attr("disabled", "disabled");
+    var form=$("#form-ui");
+    var data=form.serialize();
+    var title=$("#title").val();
+    var city_id=$("#city_id").val();
+    var category=$("#category").val();
+     var courrency=$("#courrency").val();
+     var price=$("#price").val();
+     var comment=$("#comment").val();
+     
+if(title==""){
+
+ $("#title").css("border","1px solid #ff0000");
+ $(".add_adv").attr("disabled",false);
+}
+if(city_id==""){
+  $("#city_id").css("border","1px solid #ff0000");
+  $(".add_adv").attr("disabled",false);
+}
+if(category==""){
+  $("#category").css("border","1px solid #ff0000");
+  $(".add_adv").attr("disabled",false);
+}
+if(courrency==""){
+  $("#courrency").css("border","1px solid #ff0000");
+  $(".add_adv").attr("disabled",false);
+}
+
+if(price==""){
+  $("#price").css("border","1px solid #ff0000");
+  $(".add_adv").attr("disabled",false);
+}
+if(comment==""){
+  $("#comment").css("border","1px solid #ff0000");
+  $(".add_adv").attr("disabled",false);
+}
+
+//alert(data);
+
+if(title!=""&&courrency!=""&&price!=""&&category!=""&&comment!=""&&city_id!=""){
+$.ajax({
+        type:"POST",
+        url:"<?= base_url()?>advertising/add_action",
+        data:data,
+        success: function(response){
+          alert(response);
+        if(response == 1){
+          toastr.success("تم اضافة الأعلان بنجاح وسوف يتم مراجعته فى اقرب وقت ",  {timeOut: 2000});
+          //location.assign("<?php echo base_url()?>profile/technical_support");
+          $(":text").val('');
+          $("textarea").val("");
+          $("select").attr('selected','selected');
+          $(".add_adv").attr("disabled",false);
+             }
+        
+        else if(response ==2){
+          toastr.success("نأسف للأنتهاء الباقة الخاصة بيك",  {timeOut: 2000});
+        }
+        
+        }
+    });
+}
+});
+});
+</script>
+<!------------------------------------------------------------------>
+<!-----------------------End Add action----------------------------------->

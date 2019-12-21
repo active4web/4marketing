@@ -4,7 +4,7 @@
 	<div class="col-xs-12">
 	  <ul>
 		<li class="home"> <a title="الرئيسية" href="<?= base_url()?>/home">الرئيسية</a><span>&raquo;</span></li>
-		<li><strong><a title="إعلاناتى">تغير كلمة السر</a> </strong></li>
+		<li><strong><a title="الدردشة">الدردشة</a> </strong></li>
 	  </ul>
 	</div>
   </div>
@@ -15,12 +15,11 @@
     <div class="container">
 	  
       <div class="row">
-
-        <aside class="profile col-sm-3 col-xs-12">
+      <aside class="profile col-sm-3 col-xs-12">
 		<h3><br></h3>
          <?php include("assets/sidebar.php")?>
         </aside> <!--//Aside-->
-
+        
         <div class="col-main col-sm-9 col-xs-12">
 
 		  
@@ -29,9 +28,10 @@
                 <div class="col-md-12">
                   <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
                     <ul class="nav nav-tabs" id="myTabs" role="tablist">
-                      <li role="presentation" ><a href="<?= base_url()?>profile" >اعدادات الحساب</a></li>
-                      <li role="presentation" class="active"><a href="">تغير كلمة السر</a></li>
-
+                    <li role="presentation" ><a href="<?= base_url()?>messages">الرسائل الواردة</a></li>
+                      <li role="presentation" ><a href="<?= base_url()?>messages/send" >الرسائل الصادرة</a></li>
+                      <li role="presentation" ><a href="<?= base_url()?>messages/archive" >أرشيف الرسائل</a></li>
+                      <li role="presentation"  class="active"><a href="" >الدردشة</a></li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
                    
@@ -41,13 +41,20 @@
                   <div class="inbox-body">
                          <div class="mail-option">
                          <div class="smart-forms smart-container wrap-2">
-        
+                         <?php
+       foreach($products as $products)
+       ?>
         <div class="form-header header-primary">
-            <h4><i class="fa fa-key  "></i>تغير كلمة السر</h4>
+            <h4><i class="fa fa-comment"></i>فتح تذكرة
+            <span style="font-size:14px;padding-right:5px"><?= get_table_filed('customers',array('id'=>$products->user_id),"user_name");?></span>
+            </h4>
           </div><!-- end .form-header section -->
-       
+      
           
           <form method="post" action="#" id="form-ui">
+          <input type="hidden" value="<?= $products->id?>" name="productid">
+          <input type="hidden" value="<?= $products->user_id?>" name="user_id">
+
             <div class="form-body">
                   
                   <div class="frm-row">
@@ -56,9 +63,7 @@
                       
                           <div class="section">
                               <label class="field">
-                                <label>كلمة السر الحالية</label>
-                                  <input type="password" name="oldpassword"   id="oldpassword" class="gui-input" placeholder="كلمة السر الحالية">
-                                  <label class="error_currentpassword error">كلمة السر الحالية غير صحيحة</label>
+                                  <input type="text" readonly name="title" id="title" class="gui-input"  value="<?= $products->name?>">
                               </label>
                           </div><!-- end section -->                                            
                       
@@ -69,36 +74,27 @@
                    
                   
                   <div class="frm-row">
+                    
+                    
+                    
                   
-                  <div class="colm colm12">
-                      <div class="section">
-                          <label class="field">
-                          <label>كلمة السر الجديدة</label>
-                              <input type="password" name="newpassword"   id="newpassword" class="gui-input" placeholder="كلمة السر الجديدة">
-                          </label>
-                      </div><!-- end section -->                                            
-                  </div><!-- end .colm6 section -->
-              </div><!-- end .form-body section -->
-
-              <div class="frm-row">
+                <div class="section">
+                    <label class="field prepend-icon">
+                        <textarea class="gui-textarea" id="comment" name="comment" placeholder="محتوى الرسالة"></textarea>
+                          <span class="field-icon"><i class="fa fa-comments"></i></span>
+                          <span class="input-hint"> 
+                            <strong>تنبيه :</strong> محتوى الرسالة
+                          </span>   
+                      </label>
+                  </div><!-- end section -->                     
+                                    
                   
-                  <div class="colm colm12">
-                      <div class="section">
-                          <label class="field">
-                          <label>تأكيد كلمة السر</label>
-                              <input type="password" name="confirmpassword" id="confirmpassword"  class="gui-input" placeholder="تأكيد كلمة السر">
-                              <label class="error_confirmpassword error">كلمة السر غير متطابقة</label>
-                          </label>
-                      </div><!-- end section -->                                            
-                  </div><!-- end .colm6 section -->
               </div><!-- end .form-body section -->
-
-          
               <div class="form-footer">
-                <button type="button" class="button btn-primary changepassword_action">حفظ</button>
+                <button type="button" class="button btn-primary message_action">إرسال</button>
               </div><!-- end .form-footer section -->
           </form>
-          </div>
+          
       </div>
                       </div>
               </div>
@@ -113,7 +109,7 @@
             </div>
 
 
-
+            </div>
         </div>
         
       </div>

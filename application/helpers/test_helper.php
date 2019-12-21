@@ -19,7 +19,28 @@ function get_table_total($table, $where = array())
 	$query = $ci->db->get_where($table, $where)->result();
 		return count($query);
 }
+function get_message_total($table,$where)
 
+{
+	$ci= & get_instance();
+	$ci->db->where($where);
+    $query = $ci->db->get($table);
+	$mychat_num=count($query->result());
+	return $mychat_num;
+}
+
+
+
+function get_message_id($table,$where, $filed = null)
+
+{
+	$ci= & get_instance();
+	$ci->db->where($where);
+    $query = $ci->db->get($table);
+	foreach($query->result() as $row) {
+		return $row->$filed;
+	}
+}
 function get_name($table,$filed)
 
 {

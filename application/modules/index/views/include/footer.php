@@ -733,6 +733,7 @@ var data = new FormData(form);
      var courrency=$("#courrency").val();
      var price=$("#price").val();
      var comment=$("#comment").val();
+     var service_type=$("#service_type").val();
      
 if(title==""){
 
@@ -758,12 +759,17 @@ if(price==""){
 }
 if(comment==""){
   $("#comment").css("border","1px solid #ff0000");
-  $(".add_aadd_adv_actiondv").attr("disabled",false);
+  $(".add_adv_action").attr("disabled",false);
 }
 
-//alert(data);
+if(service_type==1){
+  var url="<?= base_url()?>advertising/add_action";
+}
+if(service_type==2){
+  var url="<?= base_url()?>account/edit_action";
+}
 
-if(title!=""&&courrency!=""&&price!=""&&category!=""&&comment!=""&&city_id!=""){
+if(service_type!=""&&title!=""&&courrency!=""&&price!=""&&category!=""&&comment!=""&&city_id!=""){
 $.ajax({
   type:"POST",
         enctype: 'multipart/form-data',
@@ -771,12 +777,12 @@ $.ajax({
         processData: false,
         contentType: false,
         cache: false,
-        url:"<?= base_url()?>advertising/add_action",
+        url:url,
         success: function(response){
           //alert(response);
         if(response == 1){
-          toastr.success("تم اضافة الأعلان بنجاح وسوف يتم مراجعته فى اقرب وقت ",  {timeOut: 2000});
-          location.assign("<?php echo base_url()?>account");
+          toastr.success("تم تعديل الأعلان بنجاح",  {timeOut: 2000});
+          location.assign("<?php echo base_url()?>account/edit?ID="+<?= $this->input->get("ID");?>);
           $(":text").val('');
           $("textarea").val("");
           $("select").attr('selected','selected');
@@ -788,6 +794,9 @@ $.ajax({
           $(".add_adv_action").attr("disabled",false);
 
         }
+        else if(response == 3){
+          location.assign("<?php echo base_url()?>");
+             }
         
         }
     });

@@ -111,7 +111,7 @@
                                 <span> <i class="fa fa-heart" style="padding-left:5px;text-align:center; font-size:12px"></i>المفضلة:</span><span><?= get_table_total("favourites",array("course_id"=>$active->id));?></span>
                                 </td>
                                 <td class="view-message text-right"><a href="<?=base_url()?>account/delete?ID=<?= base64_encode($active->id);?>" title="<?= $active->name;?>" class="action-txt"><i class="fa fa-trash action" ></i>حذف</a>
-                                  <a href="" title="حذف"  class="action-txt"><i class="fa fa-edit action"></i>تعديل</a>
+                                  <a href="<?=base_url()?>account/edit?ID=<?= $active->id;?>" title="<?= $active->name;?>" title="تعديل"  class="action-txt"><i class="fa fa-edit action"></i>تعديل</a>
                                   <a href="<?=base_url()?>advertising/details?ID=<?= base64_encode($active->id);?>" title="<?= $active->name;?>"  class="action-txt"><i class="fa fa-external-link action"></i>مشاهدة</a>
                                 </td>
                                 

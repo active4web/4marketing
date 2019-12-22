@@ -61,7 +61,7 @@ class Advertising extends MX_Controller {
 
 public function add(){
   if($this->session->userdata("admin_id")==""){
-    redirect(base_url());
+    redirect(base_url()."pages");
   }
   else {
   $customer_id=$this->session->userdata('admin_id');
@@ -87,21 +87,22 @@ public function add(){
 
     public function add_action(){
       if($this->session->userdata("admin_id")==""){
-        redirect(base_url());
+        echo 3;
       }
       else {
       $customers_id=$this->session->userdata('admin_id');
 
-    $id_code=(int)get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"id_code");
-    $customer_code=(int)get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"id");
-
-          $expired_package=get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"expire_date");
-          $count_package_used=get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"count");
-          $total_used=get_table_filed('codes',array('id'=>$id_code),"total_used");
-          $time_days=get_table_filed('codes',array('id'=>$id_code),"time_days");
-          
-          $expire_date=date('Y-m-d', strtotime(date("Y-m-d"). " + $time_days days"));
-          if($expired_package<date("Y-m-d")){
+   $code_t=get_row("coustomer_code",array('id_customer'=>$customers_id,'package_end'=>'0'),1,"id","desc");
+   if(count($code_t)>0){
+     foreach($code_t as $code_t)
+   $id_code=$code_t->id_code;
+   $customer_code=$code_t->id;
+   $expired_package=$code_t->expire_date;
+   $count_package_used=$code_t->count;
+   $total_used=get_table_filed('codes',array('id'=>$id_code),"total_used");
+   $time_days=get_table_filed('codes',array('id'=>$id_code),"time_days");
+   $expire_date=date('Y-m-d', strtotime(date("Y-m-d"). " + $time_days days"));
+   if($expired_package<date("Y-m-d")){
           $data_pacakage['package_end']='1';
           $this->db->update("coustomer_code",$data_pacakage,array('id'=>$id_code));
           echo 2;
@@ -142,25 +143,29 @@ if($id!=""){
                               $file=$_FILES['img']['name'];
                               $file_name="img";
                               get_img_config_course('products','uploads/products/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450");
-                     get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id);
+                     get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id,1);
                               }           
                 
                 if(isset($_FILES['img1']['name'])){
                 $file=$_FILES['img1']['name'];
                 $file_name="img1";
-                get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id);
+                get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id,2);
                 }  
                 
                 if(isset($_FILES['img2']['name'])){
                 $file=$_FILES['img2']['name'];
                 $file_name="img2";
-                get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id);
-                }  
+                get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id,3);
+                }
+send_email($id,"user","add_advertising");                
 echo 1;
               }
               else {echo 2;}
                             }
                           }
+                          else {echo 2;}
+                        }
+                        
                         }
     
 }

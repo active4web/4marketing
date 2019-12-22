@@ -210,19 +210,37 @@ if(isset($_FILES['img']['name'])){
   $file=$_FILES['img']['name'];
   $file_name="img";
   get_img_config_course('products','uploads/products/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450");
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses);
-  }           
+  $id_img=get_table_filed('images',array('id_products'=>$productid,'index_img'=>1),"id");
+  if($id_img!=""){
+  get_img_config_course('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_img),"600","450");
+  }
+  else{
+  get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$productid),"600","450",0,$productid,1);
+  }
+    }           
 
 if(isset($_FILES['img1']['name'])){
 $file=$_FILES['img1']['name'];
 $file_name="img1";
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses);
+$id_img=get_table_filed('images',array('id_products'=>$productid,'index_img'=>2),"id");
+if($id_img!=""){
+get_img_config_course('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_img),"600","450");
+}
+else{
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$productid),"600","450",0,$productid,2);
+}
 }  
 
 if(isset($_FILES['img2']['name'])){
 $file=$_FILES['img2']['name'];
 $file_name="img2";
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses);
+$id_img=get_table_filed('images',array('id_products'=>$productid,'index_img'=>3),"id");
+if($id_img!=""){
+get_img_config_course('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_img),"600","450");
+}
+else{
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$productid),"600","450",0,$productid,3);
+}
 }  
 
 
@@ -291,19 +309,19 @@ if(isset($_FILES['img']['name'])){
   $file=$_FILES['img']['name'];
   $file_name="img";
   get_img_config_course('products','uploads/products/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450");
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses);
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses,1);
   }           
 
 if(isset($_FILES['img1']['name'])){
 $file=$_FILES['img1']['name'];
 $file_name="img1";
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses);
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses,2);
 }  
 
 if(isset($_FILES['img2']['name'])){
 $file=$_FILES['img2']['name'];
 $file_name="img2";
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses);
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses,3);
 }  
 
 
@@ -331,7 +349,12 @@ $this->load->view("admin/courses/courses_details",$data);
 
 
 
-
+public function change_review(){
+    $id=$this->input->get('id');
+    $course_type=$this->input->get('course_type');
+    $data['data'] = $this->data->get_table_data('products',array('id'=>$id));
+    $this->load->view("admin/courses/change_review",$data); 
+    }
 
 
     function active(){
@@ -551,5 +574,18 @@ function change_date(){
           }
     
 
+
+          public function status_action(){
+            $id_status=$this->input->post('id_status');
+            $status=$this->input->post('status');
+            $data['view'] =$status;
+    $this->db->update("products",$data,array('id'=>$id_status));
+    if($id_status!=""){	
+     send_email($id_status,"advertising","change_status");
+          }    
+          $this->session->set_flashdata('msg', 'تم التحديث بنجاح');
+         $this->session->mark_as_flash('msg');
+     redirect(base_url()."admin/courses/inside", 'refresh');
+        }
 
 }

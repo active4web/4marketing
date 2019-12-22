@@ -32,11 +32,12 @@ $name_dep=get_table_filed('department',array('id'=>$dep_id),"name");
       <div class="smart-forms smart-container wrap-2">
         
         	<div class="form-header header-primary">
-            	<h4><i class="fa fa-flask"></i>اضافة الاعلان</h4>
+            	<h4><i class="fa fa-bullhorn"></i>اضافة الاعلان</h4>
             </div><!-- end .form-header section -->
    	    
             
             <form method="post" action="#" id="form-ui">
+            <input type="hidden" id="service_type" value="1">
             	<div class="form-body">
                     
                     <div class="frm-row">

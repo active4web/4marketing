@@ -3645,19 +3645,19 @@ $this->api_return([
               $file=$_FILES['img']['name'];
               $file_name="img";
               get_img_config_course('products','uploads/products/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450");
-     get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id);
+     get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id,1);
               }           
 
 if(isset($_FILES['img1']['name'])){
 $file=$_FILES['img1']['name'];
 $file_name="img1";
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id);
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id,2);
 }  
 
 if(isset($_FILES['img2']['name'])){
 $file=$_FILES['img2']['name'];
 $file_name="img2";
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id);
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id,3);
 }  
 
           $result['advertising_id']=(int)$id;
@@ -3843,19 +3843,19 @@ $this->api_return([
         $file=$_FILES['img']['name'];
         $file_name="img";
         get_img_config_course('products','uploads/products/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$advertising_id),"600","450");
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$advertising_id);
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$advertising_id,1);
         }           
 
 if(isset($_FILES['img1']['name'])){
 $file=$_FILES['img1']['name'];
 $file_name="img1";
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$advertising_id),"600","450",0,$advertising_id);
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$advertising_id),"600","450",0,$advertising_id,2);
 }  
 
 if(isset($_FILES['img2']['name'])){
 $file=$_FILES['img2']['name'];
 $file_name="img2";
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$advertising_id),"600","450",0,$advertising_id);
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$advertising_id),"600","450",0,$advertising_id,3);
 }  
 
     $result['advertising_id']=(int)$this->input->post('advertising_id');;

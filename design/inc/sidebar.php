@@ -212,8 +212,8 @@ $social_archive=$this->db->get_where("soical_advertising",array("view"=>'1','sta
                                         </span>
                                     </a>
                                 </li>
-                                <li class="nav-item  <?php if($curt=='social_archive'){echo'active open';}?>">
-                                    <a href="<?=base_url()?>admin/banks/social_archive" class="nav-link ">
+                                <li class="nav-item  <?php if($curt=='archive_social'){echo'active open';}?>">
+                                    <a href="<?=base_url()?>admin/banks/archive_social" class="nav-link ">
                                         <i class="fa fa-cart-plus"></i>
                                         <span class="title">ارشيف الحملات الاعلانية
                  <span style="color:red" class="banks_nofiy"></span>                       

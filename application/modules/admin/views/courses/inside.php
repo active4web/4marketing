@@ -204,7 +204,7 @@ ul.ss {
 											</a> </td>
 												
 													<td> 
-												<a  data-id="<?php echo $data->id;?>" class="btn btn-xs purple table-icon edit" title="change status" style="padding: 1px 0px;">
+												<a   class="btn btn-xs purple table-icon" href="<?=DIR?>admin/courses/change_review?id_status=<?php echo $data->id;?>" title="change status" style="padding: 1px 0px;">
 												<i class="fa fa-edit" title="edit status"></i>
 												<span class="code_actvation-<?php echo $data->id;?>"><?php echo $view;?></span>
 											</a>

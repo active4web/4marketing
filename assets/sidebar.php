@@ -9,7 +9,7 @@ $curt_id = $this->uri->segment(4);
 
  <div class="sidebar">           
             <ul>
-<li <?php if(($controller_curt ==''||$controller_curt =='archive')&&$main_curt=="account"){?>class="current" <?php }?>><a href="<?= base_url()?>account/"><i class="fa fa-bullhorn" aria-hidden="true"></i> إعلاناتى</a></li>
+<li <?php if(($controller_curt =='edit'||$controller_curt ==''||$controller_curt =='archive')&&$main_curt=="account"){?>class="current" <?php }?>><a href="<?= base_url()?>account/"><i class="fa fa-bullhorn" aria-hidden="true"></i> إعلاناتى</a></li>
 <li <?php if($controller_curt =='message'||$controller_curt =='send_message'||$controller_curt =='archive'||$controller_curt =='archive'||$controller_curt =='send'||$controller_curt ==''&&$main_curt=="messages"){?>class="current" <?php }?>><a href="<?= base_url()?>messages"><i class="fa fa-comments" aria-hidden="true"></i> الرسائل</a></li>
 <li <?php if(($controller_curt =='ticket'||$controller_curt =='technical_support')&&$main_curt=="profile"){?>class="current" <?php }?>><a href="<?= base_url()?>profile/technical_support"><i class="fa fa-support" aria-hidden="true"></i> الدعم الفنى</a></li>
 <li><a href="my_balance.html"><i class="fa fa-money" aria-hidden="true"></i> الرصيد الاعلانى </a></li>

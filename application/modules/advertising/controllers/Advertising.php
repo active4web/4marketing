@@ -93,6 +93,8 @@ public function add(){
       $customers_id=$this->session->userdata('admin_id');
 
     $id_code=(int)get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"id_code");
+    $customer_code=(int)get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"id");
+
           $expired_package=get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"expire_date");
           $count_package_used=get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"count");
           $total_used=get_table_filed('codes',array('id'=>$id_code),"total_used");
@@ -112,7 +114,7 @@ public function add(){
            } 
               else {
                 $data_pacakage['count']=$count_package_used+1;
-                $this->db->update("coustomer_code",$data_pacakage,array('id'=>$id_code));  
+                $this->db->update("coustomer_code",$data_pacakage,array('id'=>$customer_code));  
                   
                       $store = [
                                 'user_id'          	=> $customers_id,
@@ -135,7 +137,28 @@ public function add(){
                               ];
                               $insert = $this->db->insert('products',$store);
                              $id= $this->db->insert_id();
+if($id!=""){
+                             if(isset($_FILES['img']['name'])){
+                              $file=$_FILES['img']['name'];
+                              $file_name="img";
+                              get_img_config_course('products','uploads/products/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450");
+                     get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id);
+                              }           
+                
+                if(isset($_FILES['img1']['name'])){
+                $file=$_FILES['img1']['name'];
+                $file_name="img1";
+                get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id);
+                }  
+                
+                if(isset($_FILES['img2']['name'])){
+                $file=$_FILES['img2']['name'];
+                $file_name="img2";
+                get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"600","450",0,$id);
+                }  
 echo 1;
+              }
+              else {echo 2;}
                             }
                           }
                         }

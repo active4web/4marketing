@@ -723,10 +723,10 @@ $.ajax({
 
 <script>
 $(document).ready(function(){
-$(".add_adv").click(function(){
- $(".add_adv").attr("disabled", "disabled");
-    var form=$("#form-ui");
-    var data=form.serialize();
+$(".add_adv_action").click(function(){
+ $(".add_adv_action").attr("disabled", "disabled");
+    var form = $('#form-ui')[0];
+var data = new FormData(form);
     var title=$("#title").val();
     var city_id=$("#city_id").val();
     var category=$("#category").val();
@@ -737,50 +737,56 @@ $(".add_adv").click(function(){
 if(title==""){
 
  $("#title").css("border","1px solid #ff0000");
- $(".add_adv").attr("disabled",false);
+ $(".add_adv_action").attr("disabled",false);
 }
 if(city_id==""){
   $("#city_id").css("border","1px solid #ff0000");
-  $(".add_adv").attr("disabled",false);
+  $(".add_adv_action").attr("disabled",false);
 }
 if(category==""){
   $("#category").css("border","1px solid #ff0000");
-  $(".add_adv").attr("disabled",false);
+  $(".add_adv_action").attr("disabled",false);
 }
 if(courrency==""){
   $("#courrency").css("border","1px solid #ff0000");
-  $(".add_adv").attr("disabled",false);
+  $(".add_adv_action").attr("disabled",false);
 }
 
 if(price==""){
   $("#price").css("border","1px solid #ff0000");
-  $(".add_adv").attr("disabled",false);
+  $(".add_adv_action").attr("disabled",false);
 }
 if(comment==""){
   $("#comment").css("border","1px solid #ff0000");
-  $(".add_adv").attr("disabled",false);
+  $(".add_aadd_adv_actiondv").attr("disabled",false);
 }
 
 //alert(data);
 
 if(title!=""&&courrency!=""&&price!=""&&category!=""&&comment!=""&&city_id!=""){
 $.ajax({
-        type:"POST",
-        url:"<?= base_url()?>advertising/add_action",
+  type:"POST",
+        enctype: 'multipart/form-data',
         data:data,
+        processData: false,
+        contentType: false,
+        cache: false,
+        url:"<?= base_url()?>advertising/add_action",
         success: function(response){
-          alert(response);
+          //alert(response);
         if(response == 1){
           toastr.success("تم اضافة الأعلان بنجاح وسوف يتم مراجعته فى اقرب وقت ",  {timeOut: 2000});
-          //location.assign("<?php echo base_url()?>profile/technical_support");
+          location.assign("<?php echo base_url()?>account");
           $(":text").val('');
           $("textarea").val("");
           $("select").attr('selected','selected');
-          $(".add_adv").attr("disabled",false);
+          $(".add_adv_action").attr("disabled",false);
              }
         
         else if(response ==2){
           toastr.success("نأسف للأنتهاء الباقة الخاصة بيك",  {timeOut: 2000});
+          $(".add_adv_action").attr("disabled",false);
+
         }
         
         }

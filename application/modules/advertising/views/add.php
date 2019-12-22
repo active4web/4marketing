@@ -156,7 +156,7 @@ $name_dep=get_table_filed('department',array('id'=>$dep_id),"name");
                     <div class="section">
                         <label class="field prepend-icon file">
                             <span class="button btn-primary"> إختر صورة </span>
-                			<input type="file" class="gui-file" name="file1" id="file1" onchange="document.getElementById('uploader1').value = this.value;">
+                			<input type="file" class="gui-file" name="img" id="file1" onchange="document.getElementById('uploader1').value = this.value;">
                             <input type="text" class="gui-input" id="uploader1" placeholder="no file selected" readonly="">
                             <span class="field-icon"><i class="fa fa-upload"></i></span>
                         </label>
@@ -165,7 +165,7 @@ $name_dep=get_table_filed('department',array('id'=>$dep_id),"name");
                     <div class="section">
                         <label class="field prepend-icon file">
                             <span class="button btn-primary"> إختر صورة </span>
-                			<input type="file" class="gui-file" name="file2" id="file2" onchange="document.getElementById('uploader2').value = this.value;">
+                			<input type="file" class="gui-file" name="img1" id="file2" onchange="document.getElementById('uploader2').value = this.value;">
                             <input type="text" class="gui-input" id="uploader2" placeholder="no file selected" readonly="">
                             <span class="field-icon"><i class="fa fa-upload"></i></span>
                         </label>
@@ -174,15 +174,15 @@ $name_dep=get_table_filed('department',array('id'=>$dep_id),"name");
                     <div class="section">
                         <label class="field prepend-icon file">
                             <span class="button btn-primary"> إختر صورة </span>
-                			<input type="file" class="gui-file" name="file3" id="file2" onchange="document.getElementById('uploader2').value = this.value;">
-                            <input type="text" class="gui-input" id="uploader2" placeholder="no file selected" readonly="">
+                			<input type="file" class="gui-file" name="img2" id="file3" onchange="document.getElementById('uploader3').value = this.value;">
+                            <input type="text" class="gui-input" id="uploader3" placeholder="no file selected" readonly="">
                             <span class="field-icon"><i class="fa fa-upload"></i></span>
                         </label>
                     </div><!-- end  section -->
                     
                 </div><!-- end .form-body section -->
                 <div class="form-footer">
-                	<button type="button" class="button btn-primary add_adv">أضف إعلانك</button>
+                	<button type="button" class="button btn-primary add_adv_action">أضف إعلانك</button>
                 </div><!-- end .form-footer section -->
             </form>
             

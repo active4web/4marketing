@@ -1888,7 +1888,7 @@ ul#cart-sidebar {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	font-size:20px;
+	font-size:14px;
 	font-weight:500;
 	text-transform: none;
 	color: #5578d0;
@@ -1934,7 +1934,7 @@ ul#cart-sidebar {
 	margin: auto;
 	font-size: 16px;
 	
-	background-color: #509619;
+	background-color:#12224a;
 	color: #fff;
 	padding: 8px 12px;
 	font-weight: 700;
@@ -5046,7 +5046,7 @@ ul.products-list .sale-right {
 	padding: 0px 22px 20px 0px;
 }
 .product-view-area .product-name h1 {
-	font-size: 34px;
+	font-size:22px;
 	margin: 0 0 18px;
 	text-align: right;
 	line-height: 25px;
@@ -5130,8 +5130,8 @@ ul.products-list .sale-right {
 	margin-right: 10px
 }
 .product-view-area .product-details-area .price {
-	font-size: 28px;
-	color: #fe0100;
+	font-size:14px;
+	color:#12224a;
 }
 .cart-plus-minus .qty {
 	border: 1px solid #e0e0e0;
@@ -10746,3 +10746,15 @@ background-color: #0098d0;padding: 6px 10px;border-radius: 0.4em;
 		.user{line-height:30px;font-size:14px;margin: 12px 0px;}
 		.user .content{border:1px solid #ccc; padding:10px; background-color:#016596;color:#fff;border-radius:0.4em;}
 		.user .content.management{background-color: #ea1852ab;}
+		.special-advertising{    height: 30px !important;
+			font-family: 'DroidArabicKufi', sans-serif !important;
+			background: #12224a;
+			font-size: 12px !important;
+			line-height: 29px !important;}
+			.details_row{background: #d0d0d0ba;
+				padding: 10px;
+				color: #000;
+				border-radius: 0.4em;margin: 0px;}
+				hr{margin:10px;;}
+				.phone_hide{display: none;cursor: pointer;}
+				.show_hone{cursor: pointer;}

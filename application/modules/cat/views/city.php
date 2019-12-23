@@ -80,6 +80,7 @@ if($this->input->get("arrange")=="heigh_price"||$this->input->get("arrange")==""
 			<div  class="col-md-12 col-sm-12 col-xs-12" style="height:12px"></div>
  <?php 
           foreach($results as $data){
+            $maincount=0;
                 if($data->img!=""){
                     $image=DIR_DES_STYLE."products/".$data->img;
                     }

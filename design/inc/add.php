@@ -396,7 +396,7 @@ $.ajax({
             contentType: false,
             cache: false,
         success: function(response){
- //alert(response);
+ alert(response);
         if(response == 1){
             toastr.success("تم التنفيذ بنجاح");
            if(service_type==1){

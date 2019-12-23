@@ -16,6 +16,8 @@
                     <link rel="stylesheet" href="<?= DIR_DES?>css/font-awesome.min.css">
                         <link rel="stylesheet" href="<?= DIR_DES?>css/simple-line-icons.css">
                             <link rel="stylesheet" href="<?= DIR_DES?>css/owl.transitions.css">
+                            <link rel="stylesheet" href="<?= DIR_DES?>/css/owl.carousel.css">
+
                                 <link rel="stylesheet" href="<?= DIR_DES?>css/meanmenu.min.css">
                                     <link rel="stylesheet" href="<?= DIR_DES?>css/nivo-slider.css">
                                         <link rel="stylesheet" href="<?= DIR_DES?>css/blog.css">

@@ -175,6 +175,10 @@ echo json_encode($a);
    $data['currency'] = $this->data->get_table_data('currency',array('view'=>'1'));
     $data['city'] = $this->data->get_table_data('city',array('view'=>'1'));
     $data['data'] = $this->data->get_table_data('products',array('id'=>$id));
+    $data['images1'] =$this->db->get_where('images',array('id_products'=>$id,'index_img'=>1))->result(); 
+	$data['images2'] =$this->db->get_where('images',array('id_products'=>$id,'index_img'=>2))->result(); 
+	$data['images3'] =$this->db->get_where('images',array('id_products'=>$id,'index_img'=>3))->result(); 
+
         $this->load->view("admin/courses/edit",$data); 
 	}
 	
@@ -206,40 +210,46 @@ $id_courses=$this->input->post('id');
         $this->db->update('products',$store,array("id"=>$id_courses));
      
 
-if(isset($_FILES['img']['name'])){
+if($_FILES['img']['name']!=""){
   $file=$_FILES['img']['name'];
   $file_name="img";
   get_img_config_course('products','uploads/products/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450");
-  $id_img=get_table_filed('images',array('id_products'=>$productid,'index_img'=>1),"id");
+ 
+}
+if($_FILES['img1']['name']!=""){
+    $file=$_FILES['img1']['name'];
+    $file_name="img1";
+
+  $id_img=get_table_filed('images',array('id_products'=>$id_courses,'index_img'=>1),"id");
   if($id_img!=""){
   get_img_config_course('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_img),"600","450");
   }
   else{
-  get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$productid),"600","450",0,$productid,1);
+  get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses,1);
   }
     }           
 
-if(isset($_FILES['img1']['name'])){
-$file=$_FILES['img1']['name'];
-$file_name="img1";
-$id_img=get_table_filed('images',array('id_products'=>$productid,'index_img'=>2),"id");
+if($_FILES['img2']['name']!=""){
+$file=$_FILES['img2']['name'];
+$file_name="img2";
+$id_img=get_table_filed('images',array('id_products'=>$id_courses,'index_img'=>2),"id");
 if($id_img!=""){
 get_img_config_course('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_img),"600","450");
 }
 else{
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$productid),"600","450",0,$productid,2);
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses,2);
 }
 }  
 
-if(isset($_FILES['img2']['name'])){
-$file=$_FILES['img2']['name'];
-$file_name="img2";
-$id_img=get_table_filed('images',array('id_products'=>$productid,'index_img'=>3),"id");
+if($_FILES['img3']['name']!=""){
+$file=$_FILES['img3']['name'];
+$file_name="img3";
+$id_img=get_table_filed('images',array('id_products'=>$id_courses,'index_img'=>3),"id");
 if($id_img!=""){
 get_img_config_course('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_img),"600","450");
 }
 else{
-get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$productid),"600","450",0,$productid,3);
+get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id_courses),"600","450",0,$id_courses,3);
 }
 }  
 

@@ -215,102 +215,98 @@ $category_name=	get_table_filed('category',array('id'=>$cat_id),"name");
 																			<div class="col-md-1"></div>
 																	</div>
 																	
-																		<div class="form-group">
-																		  <?php
-																		  $countimg="";
-																		   $gallery=$this->db->get_where("images",array("id_products"=>$data->id))->result();
-																		   //echo $this->db->last_query();
-																		  // die();
-																		   if(count($gallery)>0){
-																		       foreach($gallery as $gallery_img){
-																		  ?>  
-																	<div class="col-md-4">
-																		<div class="fileinput fileinput-new" data-provides="fileinput">
-																						<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-																						    	<img src="<?= base_url()?>uploads/products/<?= $gallery_img->image;?>">
+																	<div class="form-group">
 
-																						</div>
-																						<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> 
-																						</div>
-																						<div>
-																						<!--	<span class="btn default btn-file">
-																							  
-																								<span class="fileinput-new">صورة  </span>
-																								<span class="fileinput-exists">تغيير</span>
-																								<input type="file" name="img<?= $countimg?>"> </span>-->
-																								<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
-																						</div>
-																					</div>
-													<p style="color:red;direction:rtl"></p>
 
-												  <p class="delete"><a href="<?= base_url()?>admin/courses/delete_images?advertising_id=<?= $data->id?>&id=<?= $gallery_img->id?>">حذف الصورة</a></p>
-
-																		<p style="color:red;direction:rtl">عرض الصورة 400 بيكسل</p>
-																		<p style="direction:rtl">طول الصورة 400بيكسل</p>
-																	</div>
-																	<?php $countimg++;  }}?>
-																		<?php if(count($gallery)==0){ ?>
 																		
-																		<div class="col-md-4">
-																		<div class="fileinput fileinput-new" data-provides="fileinput">
-																						<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;"></div>
-																						<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> 
-																					
-																						</div>
-																						<div>
-																							<span class="btn default btn-file">
-																								<span class="fileinput-new">صورة  </span>
-																								<span class="fileinput-exists">تغيير</span>
-																								<input type="file" name="img<?= $countimg?>"> </span>
-																								<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
-																						</div>
+																<div class="col-md-12" style="text-align: center">
+																	<div class="fileinput fileinput-new" data-provides="fileinput">
+																					<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+																<?php if($data->img!=""){?><img src="<?= base_url()?>uploads/products/<?= $data->img;?>"><?php } else {?>
+																<img src="<?= base_url()?>uploads/products/no_img.png">
+																<?php }?>
 																					</div>
-																					<p style="color:red;direction:rtl"></p>
-																		<p style="color:red;direction:rtl">عرض الصورة 400 بيكسل</p>
-																		<p style="direction:rtl">طول الصورة 400بيكسل</p>
-																	</div>
-																	
-																		<?php }?>
-																	<?php if(count($gallery)==1||count($gallery)==0){ ?>
-																		<div class="col-md-4">
-																		<div class="fileinput fileinput-new" data-provides="fileinput">
-																						<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;"></div>
-																						<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> </div>
-																						<div>
-																							<span class="btn default btn-file">
-																								<span class="fileinput-new">صورة  </span>
-																								<span class="fileinput-exists">تغيير</span>
-																								<input type="file" name="img1"> </span>
-																								<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
-																						</div>
+																					<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> 
 																					</div>
-																					<p style="color:red;direction:rtl"></p>
-																		<p style="color:red;direction:rtl">عرض الصورة 400 بيكسل</p>
-																		<p style="direction:rtl">طول الصورة 400بيكسل</p>
-																	</div>
-																	<?php }if(count($gallery)==2||count($gallery)==0){ ?>
-																	
-																	
-																		<div class="col-md-4">
-																		<div class="fileinput fileinput-new" data-provides="fileinput">
-																						<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;"></div>
-																						<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> </div>
-																						<div>
-																							<span class="btn default btn-file">
-																								<span class="fileinput-new">صورة  </span>
-																								<span class="fileinput-exists">تغيير</span>
-																								<input type="file" name="img2"> </span>
-																								<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
-																						</div>
+																					<div>
+																					<span class="btn default btn-file">
+																							<span class="fileinput-new">الصورة الرئيسية</span>
+																							<span class="fileinput-exists">تغيير</span>
+																							<input type="file" name="img"> </span>
+																							<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
 																					</div>
-																					<p style="color:red;direction:rtl"></p>
-																		<p style="color:red;direction:rtl">عرض الصورة 400 بيكسل</p>
-																		<p style="direction:rtl">طول الصورة 400بيكسل</p>
-																	</div>
-																	<?php }?>
-																	</div>
+																				</div>
+																			</div>
 																	
-																	
+																		</div>	
+
+
+<div class="form-group">
+
+<div class="col-md-4" style="text-align: center">
+	<div class="fileinput fileinput-new" data-provides="fileinput">
+					<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+<?php if(count($images1)>0){foreach($images1 as $gallery1)?>
+<img src="<?= base_url()?>uploads/products/<?= $gallery1->image;?>"><?php } else {?>
+<img src="<?= base_url()?>uploads/products/no_img.png">
+<?php }?>
+					</div>
+					<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> 
+					</div>
+					<div>
+					<span class="btn default btn-file">
+							<span class="fileinput-new">صورة</span>
+							<span class="fileinput-exists">تغيير</span>
+							<input type="file" name="img1"> </span>
+							<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
+					</div>
+				</div>
+			</div>
+
+<div class="col-md-4" style="text-align: center">
+<div class="fileinput fileinput-new" data-provides="fileinput">
+<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+
+<?php if(count($images2)>0){foreach($images2 as $gallery2)?>
+<img src="<?= base_url()?>uploads/products/<?= $gallery2->image;?>"><?php } else {?>
+<img src="<?= base_url()?>uploads/products/no_img.png">
+<?php }?>
+
+</div>
+<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> 
+</div>
+<div>
+<span class="btn default btn-file">
+<span class="fileinput-new">صورة</span>
+<span class="fileinput-exists">تغيير</span>
+<input type="file" name="img2"> </span>
+<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
+</div>
+</div>
+</div>	
+
+<div class="col-md-4" style="text-align: center">
+<div class="fileinput fileinput-new" data-provides="fileinput">
+<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+<?php if(count($images3)>0){foreach($images3 as $gallery3)?>
+<img src="<?= base_url()?>uploads/products/<?= $gallery3->image;?>"><?php } else {?>
+<img src="<?= base_url()?>uploads/products/no_img.png">
+<?php }?>
+					</div>
+					<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> 
+					</div>
+					<div>
+					<span class="btn default btn-file">
+							<span class="fileinput-new">صورة</span>
+							<span class="fileinput-exists">تغيير</span>
+							<input type="file" name="img3"> </span>
+							<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
+					</div>
+				</div>
+			</div>
+	
+		</div>	
+
 																	<div class="form-actions">
 																		<div class="row">
 																			<div class="col-md-offset-3 col-md-9">

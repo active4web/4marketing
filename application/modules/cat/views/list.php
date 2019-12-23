@@ -92,6 +92,7 @@ if($this->input->get("arrange")=="heigh_price"||$this->input->get("arrange")==""
  <?php 
 
           foreach($results as $data){
+            $maincount=0;
                 if($data->img!=""){
                     $image=DIR_DES_STYLE."products/".$data->img;
                     }

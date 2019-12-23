@@ -31,29 +31,14 @@ class Advertising extends MX_Controller {
       $tab_id=base64_decode($this->input->get("ID"));
 
       $views=get_table_filed('products',array("id"=>$tab_id),"views");
+      $cat_id=get_table_filed('products',array("id"=>$tab_id),"cat_id");
       $this->db->update("products",array("views"=>((int)$views)+1),array('id'=> $tab_id));
-
-      $data_conent["results"] =$this->db->get_where('products',array('id'=>$tab_id))->result(); 
-
-      $count_fav =$this->db->get_where('reviews',array('id_course'=>$tab_id,'course_key'=>'2'))->result();
-      $rate_count=(int)count($count_fav);
-      $this->db->select_sum('rate');
-      $this->db->from('reviews');
-      $this->db->where("id_course=$tab_id");
-      $query = $this->db->get();
-       $final_rate=$query->row()->rate;
-       if($rate_count>0){
-        $main_rata_data['total_rate']= round($final_rate/$rate_count);
-       }
-       else {
-        $main_rata_data['total_rate']=0;
-       }
-      $this->db->update("bag_info",$main_rata_data,array("id"=>$tab_id));
-    
-    $data_conent['site_info']=$this->db->get_where('site_info')->result();
+      $data_contact["results"] =$this->db->get_where('products',array('id'=>$tab_id))->result(); 
+      $data_contact['related_products']=$this->db->order_by("id","desc")->limit(10)->get_where('products',array('id!='=>$tab_id,'cat_id'=>$cat_id))->result();
+    $data_contact['site_info']=$this->db->get_where('site_info')->result();
     $this->load->view("index/include/head",$data );
     $this->load->view("index/include/header",$data );
-    $this->load->view('details',$data_conent);
+    $this->load->view('details',$data_contact);
     $this->load->view("index/include/footer",$data);
     
     }

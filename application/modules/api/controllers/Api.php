@@ -3581,20 +3581,25 @@ $this->api_return([
         }
 
         else{
-			
+      
+          
           $customers_id=get_customer_id($this->input->post('token_id'));
           date_default_timezone_set('Asia/Riyadh');
           
-          $id_code=(int)get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"id_code");
-          $expired_package=get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"expire_date");
-          $count_package_used=get_table_filed('coustomer_code',array('id_customer'=>$customers_id,'package_end'=>'0'),"count");
+   $code_t=get_row("coustomer_code",array('id_customer'=>$customers_id,'package_end'=>'0'),1,"id","desc");
+   if(count($code_t)>0){
+     foreach($code_t as $code_t)
+   $id_code=(int)$code_t->id_code;
+   $customer_code=(int)$code_t->id;
+   $expired_package=(int)$code_t->expire_date;
+   $count_package_used=(int)$code_t->count;
           $total_used=get_table_filed('codes',array('id'=>$id_code),"total_used");
           $time_days=get_table_filed('codes',array('id'=>$id_code),"time_days");
           
           $expire_date=date('Y-m-d', strtotime(date("Y-m-d"). " + $time_days days"));
           if($expired_package<date("Y-m-d")){
           $data_pacakage['package_end']='1';
-          $this->db->update("coustomer_code",$data_pacakage,array('id'=>$id_code));
+          $this->db->update("coustomer_code",$data_pacakage,array('id'=>$customer_code));
           $this->api_return([
             'message' => "نأسف لنتهاء الباقة الخاصة بيك",
             'errNum' => 405,
@@ -3604,7 +3609,7 @@ $this->api_return([
           
           else if($total_used<=$count_package_used){
             $data_pacakage['package_end']='1';
-            $this->db->update("coustomer_code",$data_pacakage,array('id'=>$id_code));
+            $this->db->update("coustomer_code",$data_pacakage,array('id'=>$customer_code));
              $this->api_return([
             'message' => "نأسف لنتهاء الباقة الخاصة بيك",
             'errNum' => 405,
@@ -3613,7 +3618,7 @@ $this->api_return([
            } 
               else {
                 $data_pacakage['count']=$count_package_used+1;
-                $this->db->update("coustomer_code",$data_pacakage,array('id'=>$id_code));  
+                $this->db->update("coustomer_code",$data_pacakage,array('id'=>$customer_code));  
                   
                       $store = [
                                 'user_id'          	=> $customers_id,
@@ -3680,7 +3685,17 @@ get_img_config_insert('images','uploads/products/',$file,$file_name,'image','gif
           'status' => false,
           "result" => $data
           ],200); 
-          }   }
+          } 
+        }
+        else {
+          $this->api_return([
+            'message' => "نأسف لنتهاء الباقة الخاصة بيك",
+            'errNum' => 405,
+            'status' => true,
+          ],200);
+          } 
+
+        }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 

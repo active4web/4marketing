@@ -50,7 +50,6 @@ public function add(){
   }
   else {
   $customer_id=$this->session->userdata('admin_id');
-  
   $data['site_info'] =$this->db->get_where('site_info')->result(); 
   $data['cat'] =$this->db->get_where('category',array('view'=>'1'))->result(); 
   $data['search_cat'] =$this->db->get_where('category',array('view'=>'1'))->result(); 
@@ -89,13 +88,13 @@ public function add(){
    $expire_date=date('Y-m-d', strtotime(date("Y-m-d"). " + $time_days days"));
    if($expired_package<date("Y-m-d")){
           $data_pacakage['package_end']='1';
-          $this->db->update("coustomer_code",$data_pacakage,array('id'=>$id_code));
+          $this->db->update("coustomer_code",$data_pacakage,array('id'=>$customer_code));
           echo 2;
            }
           
           else if($total_used<=$count_package_used){
             $data_pacakage['package_end']='1';
-            $this->db->update("coustomer_code",$data_pacakage,array('id'=>$id_code));
+            $this->db->update("coustomer_code",$data_pacakage,array('id'=>$customer_code));
             echo 2;
            } 
               else {

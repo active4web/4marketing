@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?= base_url();?>design/lightbox2-master/dist/css/lightbox.min.css" type="text/css" media="screen" />
+<script src="<?= base_url();?>design/lightbox2-master/dist/js/lightbox-plus-jquery.min.js"></script>
 
  <div class="breadcrumbs">
     <div class="container">
@@ -30,12 +32,11 @@ $name_dep=get_table_filed('department',array('id'=>$dep_id),"name");
 
 <?php
 foreach($results as $pro)
-
 $category_id=$pro->cat_id;
 $category_name=get_table_filed('category',array('id'=>$category_id),"name");
 $dep_id=$pro->dep_id;
 $dep_name=get_table_filed('department',array('id'=>$dep_id),"name");
-
+$maincount=0;
 $favourite_key=0;
 if($this->session->userdata("device_id")!=""){
   $customer_id=get_customer_id_forent($this->session->userdata("device_id")); 
@@ -58,13 +59,19 @@ $currency=get_name('currency',$pro->currency_id);
 $city=get_name('city',$pro->city_id);
 ?>
 
+
+
+
   <div class="main-container col2-left-layout">
     <div class="container">
 <div class="row">
+
 <div class="col-main col-sm-1"></div>
-<div class="col-main col-sm-10  category-filter">
+<div class="col-main col-sm-12  category-filter">
           <div class="product-view-area">
-  <div class="col-md-12 product-details-area" >
+
+
+  <div class="col-md-6 product-details-area" >
               <div class="product-name">
                 <h1><?= $pro->name?></h1>
               </div>
@@ -82,10 +89,10 @@ $city=get_name('city',$pro->city_id);
 <div class="col-md-8">  <span class="price"> <a href="<?=base_url()?>cat/city?ID=<?= $pro->city_id?>"><?= $city?></a></span></div>
 <div class="col-md-12"><hr></div>
 <div class="col-md-4"> <span class="price-label">البريد الألكترونى</span></div>
-<div class="col-md-8">  <span class="price"> <?= $pro->user_email?></span></div>
+<div class="col-md-8">  <span class="price"><a href="mailto:<?= $pro->user_email?>"><?= $pro->user_email?></a> </span></div>
 <div class="col-md-12"><hr></div>
 <div class="col-md-4 phone_hide"> <span class="price-label">التليفون</span></div>
-<div class="col-md-8 phone_hide">  <span class="price"> <?= $pro->user_phone?></span></div>
+<div class="col-md-8 phone_hide">  <span class="price"> <a href="tel:<?= $pro->user_phone?>" class="Blondie"><?= $pro->user_phone?></a></span></div>
 
 </div>
               <div class="price-box">
@@ -113,9 +120,40 @@ $city=get_name('city',$pro->city_id);
                 </ul>
               </div>
             </div>
+
+
+            <div class="col-md-6" style="text-align:center ">
+  <!-- Main Slider -->
+  <div class="product-name" >
+                <h3><br><br><br></h3>
+              </div>
+<?php if(count($images)>0){?>
+  <div class="main-slider">
+            <div class="slider">
+              <div id="mainSlider" class="nivoSlider slider-image">
+                <?php
+                
+                  foreach($images as $imgdata){
+                ?>
+<a title="مشاهدة الصور" class="example-image-link" href="<?= DIR_DES_STYLE?>/products/<?= $imgdata->image;?>" data-lightbox="example-1">
+<img src="<?= DIR_DES_STYLE ?>/products/<?= $imgdata->image?>" alt="اعلانات مجانية" title="<?= $pro->name?>" style="width:100%;height:400px" />
+                </a>  
+                <?php } ?>
+              </div>
+            </div>
+          </div>
+                  <?php } else {?>
+                    <img src="<?= DIR_DES_STYLE ?>/products/no_img.png" alt="اعلانات مجانية" title="<?= $pro->name?>" />
+                  <?php }?>
+          <!-- End Main Slider -->
+        </div>
+     
+  <!-- End Main Slider Area -->
+
+  <div class="col-md-12"><br></div>  
 </div>
  <div class="col-md-12"></div>         
-          <div class="product-overview-tab">
+          <div class="product-overview-tab col-md-12">
             <div class="product-tab-inner">
               <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
                 <li class="active"> <a href="#description" data-toggle="tab"> الوصف </a> </li>
@@ -262,6 +300,3 @@ $city=get_name('city',$data->city_id);
   <!-- Main Container End -->
   
   <!-- Footer -->
-
-  <link rel="stylesheet" href="<?= DIR_DES?>home_slider/loopslider.css">
-  <link rel="stylesheet" href="<?= DIR_DES?>home_slider/demo/default.css">

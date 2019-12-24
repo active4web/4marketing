@@ -782,7 +782,7 @@ background-color: #12224a;
 }
 /*4.4 Top Search */
 .top-search {
-	max-width: 410px;
+	max-width: 100;
 	margin: 0 auto;
 }
 .top-search a {
@@ -841,13 +841,13 @@ color: #000000;
 #search button {
 	line-height: 29px;
 	padding: 8px 19px;
-	float: left;
 	display: inline-block;
 	background:#12224a;
 	border: 1px solid;
 	color: #FFF;
 	transition: 0.5s all ease;
 	border-radius: 0.4em;
+	width:100%;
 }
 #search button:hover {
 	background: #2b4b9b;
@@ -878,18 +878,14 @@ select.cate-dropdown {
 	appearance: none;
 	background-position: left center;
 	background-repeat: no-repeat;
-	position: left 10px center;
 	color: transparent;
-	padding-left: 28px;
-	padding-right: 10px;
 	text-indent: 0.01px;
 	text-overflow: '';
 	cursor: pointer;
 	color: #333;
 	background-color: #ffffff;
-	margin-left: 3px;
 	border: 1px solid #EEE;
-	
+	width:100%;
 }
 select {
 	-webkit-appearance: none;
@@ -898,11 +894,7 @@ select {
 	background-position: left center;
 	background-image: url(../images/cat-select-arrow.png);
 	background-repeat: no-repeat;
-	position: left 10px center;
 	color: transparent;
-	padding-left: 28px;
-	padding-right: 10px;
-	text-indent: 0.01px;
 	text-overflow: '';
 	cursor: pointer;
 	color: #333;

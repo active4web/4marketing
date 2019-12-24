@@ -697,7 +697,7 @@ $.ajax({
 }
 </script>
 <!------------------------------End Message------------------------------------>
-<!-----------------------START getState----------------------------------->
+<!-----------------------START ADD ADVERTISING--------------------------------->
 <script>
 $(document).ready(function(){
 $(".add_adv_action").click(function(){
@@ -760,7 +760,9 @@ $.ajax({
         success: function(response){
         if(response == 1){
           toastr.success("تم تعديل الأعلان بنجاح",  {timeOut: 2000});
-          location.assign("<?php echo base_url()?>account/edit?ID=" +<?= $this->input->get("ID");?>);
+          if(service_type==2){
+          location.assign("<?php echo base_url()?>account/edit?ID="+"<?= $this->input->get("ID");?>");
+          }
           $(":text").val('');
           $("textarea").val("");
           $("select").attr('selected','selected');

@@ -105,6 +105,7 @@ echo json_encode($a);
 $country_id=$this->input->post('country_id');
 $data_p=$this->db->get_where('department',array('view'=>'1','id_cat'=>$country_id))->result();
 if(count($data_p)>0){
+    echo "<option value=''>حدد القسم الفرعى</option>";
     foreach($data_p as $data_p){
  echo "<option value='$data_p->id'>$data_p->name</option>";
     }

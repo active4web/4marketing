@@ -163,27 +163,38 @@ $this->session->set_userdata(array('curt_id' => $curt_id));
 <div class="row">
               <div class="top-search">
                 <div id="search">
-                  <form>
-                    <div class="input-group">
-                      <select class="cate-dropdown col-lg-5 col-md-5 col-sm-12 col-xs-12" name="category_id">
-                        <option value="0">كل التصنيفات</option>
-              <?php
-              foreach($search_cat as $search_cat){
-              ?>
-                        <option value="<?= $search_cat->id?>"><?= $search_cat->name?></option>
+                  <form  method="get" action="<?= base_url()?>advertising/search">
+                    <div class="input-group row" style="margin:0px">
+                    <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12"></div>
+                      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <select class="cate-dropdown" name="category_id" onChange="getState(this.value);">
+                        <option value="">كل التصنيفات</option>
+              <?php  foreach($search_cat as $search_cat){?>
+              <option value="<?= $search_cat->id?>"><?= $search_cat->name?></option>
               <?php }?>
-                      </select>
-                      <select class="cate-dropdown col-lg-5 col-md-5 col-sm-12 col-xs-12" name="area_id">
-                        <option value="0">كل المدن</option>
+               </select>
+               </div>
+               <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <select  name="dep_id"  class="cate-dropdown demoInputBox city_id"    id="state-list">
+                <option value="">القسم الفرعى</option>
+                                </select>
+                                </div>          
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                      <select class="cate-dropdown" name="area_id">
+                        <option value="">كل المدن</option>
                         <?php
               foreach($city as $city){
               ?>
                         <option value="<?= $city->id;?>"><?= $city->name;?></option>
               <?php }?>
                       </select>
-                      <button class="btn-search" type="button"><i class="fa fa-search"></i>
+                      </div>
+                      <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                      <button class="btn-search" type="submit"><i class="fa fa-search"></i>
                       </button>
+              </div>
                     </div>
+
                   </form>
                 </div>
               </div>
